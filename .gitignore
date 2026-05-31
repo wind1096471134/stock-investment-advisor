@@ -5,6 +5,10 @@ Thumbs.db
 # Claude Code local settings (personal config, not part of skill)
 .claude/
 
+# Claude Code agent artifacts (created by npx skills install)
+.agents/
+skills-lock.json
+
 # Editor files
 .vscode/
 .idea/
