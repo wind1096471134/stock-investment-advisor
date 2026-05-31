@@ -33,13 +33,6 @@ After analysis, output strictly following the structure below. Keep concise — 
 - **Valuation**: [PE/PB vs peers; **valuation percentile vs historical range e.g. "PE at 5-year 15% percentile"**]
 - **Risk**: [At least 1 counter factor]
 
-### Associated Stock Predictions
-
-| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
-|-------|--------|-------------|-----------|----------|----------|------------|
-| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
-| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
-
 ### Probability-Weighted Scenario Analysis
 
 | Scenario | Probability | Expected Range | Trigger | Rationale |
@@ -49,6 +42,13 @@ After analysis, output strictly following the structure below. Keep concise — 
 | **Bearish** | ~X% | -Y% to -Z% | [Key risk events that would trigger this] | [1-2 sentences] |
 
 > **Expected value**: [Weighted average direction] → [Final recommendation]
+
+### Associated Stock Predictions
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
+|-------|--------|-------------|-----------|----------|----------|------------|
+| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
+| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
 
 ---
 
@@ -166,6 +166,16 @@ This report is compiled from publicly available information for research referen
 - **Valuation**: PE 22x vs Yiwei's 28x — relative value advantage. PE at 5-year ~35% percentile — below historical median but not at extreme low.
 - **Risk**: If auto sales miss expectations, the sector could be dragged down; storage order conversion pace uncertain.
 
+### Probability-Weighted Scenario Analysis
+
+| Scenario | Probability | Expected Range | Trigger | Rationale |
+|----------|-------------|---------------|---------|-----------|
+| **Bullish** | ~30% | +5% to +12% | Q2 storage orders beat; BYD June sales strong; lithium further rallies | Strong macro support + policy tailwinds |
+| **Base** | ~50% | -3% to +3% | Gradual storage order conversion; stable lithium; moderate auto sales | Most balanced path, current valuation fair |
+| **Bearish** | ~20% | -5% to -15% | Auto sales miss; storage order delays; competition margin squeeze | Risk factors already flagged in peers |
+
+> **Expected value**: Base → Neutral with mild upside bias
+
 ### Associated Stock Predictions
 
 **Tier 1 (Primary)** — Direct competitors / same-sector
@@ -180,14 +190,6 @@ This report is compiled from publicly available information for research referen
 | Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
 |-------|--------|-------------|-----------|----------|----------|------------|
 | 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5 | Medium |
-
-### Probability-Weighted Scenario Analysis
-
-| Scenario | Probability | Expected Range | Trigger | Rationale |
-|----------|-------------|---------------|---------|-----------|
-| **Bullish** | ~30% | +5% to +12% | Q2 storage orders beat; BYD June sales strong; lithium further rallies | Strong macro support + policy tailwinds |
-| **Base** | ~50% | -3% to +3% | Gradual storage order conversion; stable lithium; moderate auto sales | Most balanced path, current valuation fair |
-| **Bearish** | ~20% | -5% to -15% | Auto sales miss; storage order delays; competition margin squeeze | Risk factors already flagged in peers 
 
 ---
 
