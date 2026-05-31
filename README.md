@@ -12,21 +12,44 @@
 
 ### 🚀 Quick Install
 
-```bash
-# Clone into your Claude Code skills directory
-mkdir -p ~/.claude/skills
-cd ~/.claude/skills
-git clone https://github.com/<your-user>/stock-investment-advisor.git
+#### Via Git (all platforms)
 
-# Or symlink if already cloned elsewhere
-ln -s /path/to/stock-investment-advisor ~/.claude/skills/
+```bash
+# Clone the repo
+git clone https://github.com/wind1096471134/stock-investment-advisor.git
+
+# Then symlink into your skills directory:
+mkdir -p ~/.claude/skills
+ln -s "$(pwd)/stock-investment-advisor" ~/.claude/skills/
 ```
 
-Then invoke in Claude Code:
+#### Or download manually
+
+1. Download the [latest release ZIP](https://github.com/wind1096471134/stock-investment-advisor/archive/refs/heads/main.zip)
+2. Unzip it into `~/.claude/skills/stock-investment-advisor/`
+
+#### Verify
+
+Restart Claude Code, then type:
 
 ```
 /stock-investment-advisor
 ```
+
+Or just ask a stock-related question — the skill auto-triggers on queries like "分析茅台" or "Analyze AAPL".
+
+#### Platform Compatibility
+
+| Platform | Supported | Notes |
+|----------|-----------|-------|
+| **Claude Code CLI** | ✅ | `claude` terminal app |
+| **Claude Code Desktop** | ✅ | macOS / Windows desktop app |
+| **Claude Code VS Code Extension** | ✅ | Install from VS Code marketplace |
+| **Claude Code JetBrains Plugin** | ✅ | Install from JetBrains marketplace |
+| **Cursor / Windsurf** | ✅ | Symlink into `~/.claude/skills/` |
+| **Other Claude Code IDEs** | ✅ | Any platform that loads `~/.claude/skills/` |
+
+All Claude Code variants load skills from `~/.claude/skills/` — the same install method works everywhere.
 
 Or let the skill auto-trigger on stock-related queries — works in both English and Chinese.
 
@@ -183,23 +206,41 @@ MIT — see [LICENSE](./LICENSE).
 
 ### 🚀 快速安装
 
-```bash
-# 克隆到 Claude Code 技能目录
-mkdir -p ~/.claude/skills
-cd ~/.claude/skills
-git clone https://github.com/<你的用户名>/stock-investment-advisor.git
+#### Git 克隆（所有平台通用）
 
-# 或者手动创建软链接
-ln -s /path/to/stock-investment-advisor ~/.claude/skills/
+```bash
+git clone https://github.com/wind1096471134/stock-investment-advisor.git
+mkdir -p ~/.claude/skills
+ln -s "$(pwd)/stock-investment-advisor" ~/.claude/skills/
 ```
 
-然后在 Claude Code 中调用：
+#### 手动下载
+
+1. 下载 [最新 ZIP 包](https://github.com/wind1096471134/stock-investment-advisor/archive/refs/heads/main.zip)
+2. 解压到 `~/.claude/skills/stock-investment-advisor/`
+
+#### 验证
+
+重启 Claude Code 后输入：
 
 ```
 /stock-investment-advisor
 ```
 
-或直接输入股票相关的问题自动触发，支持中英文。
+或直接问股票相关的问题，技能会自动触发。
+
+#### 平台兼容性
+
+| 平台 | 支持 | 说明 |
+|------|------|------|
+| **Claude Code CLI** | ✅ | 终端 `claude` 命令 |
+| **Claude Code 桌面版** | ✅ | macOS / Windows 桌面应用 |
+| **Claude Code VS Code 扩展** | ✅ | VS Code 插件市场安装 |
+| **Claude Code JetBrains 插件** | ✅ | JetBrains 插件市场安装 |
+| **Cursor / Windsurf** | ✅ | 软链接到 `~/.claude/skills/` |
+| **其他 Claude Code IDE** | ✅ | 任何支持 `~/.claude/skills/` 的平台 |
+
+所有 Claude Code 变体都从 `~/.claude/skills/` 加载技能——安装方法完全统一。
 
 ### ✨ 功能一览
 
