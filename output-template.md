@@ -115,23 +115,37 @@ After analysis, output strictly following the structure below. Keep concise — 
 
 ---
 
-## 🔄 双向预测逻辑
+## 🔄 双向预测逻辑（财报传导）
 
-### 已发财报 → 将发财报（信号传导）
+> **时序规则**：以目标股财报日（[target earnings date]）为参考点。
+> - 同行先发、目标后发（同季度）：同行结果 → 目标的领先指标 ✅
+> - 目标先发、同行后发（同季度）：目标结果 → 同行的领先指标 ✅
+> - 均已发财报：事后验证，不做预测 ❌
+> - 跨季度比较：注明季度差异 ⚠️
 
-**逻辑**：关联公司已公布的财报结果 → 为目标公司即将发布的财报提供参考信号。
+### 本季度财报时序
 
-| 信号源(已发) | 信号内容 | 对目标参考意义 | 影响方向 |
-|-------------|---------|--------------|---------|
-| [Peer] | [Earnings beat/miss, stock reaction, guidance] | [What this implies for target's upcoming earnings] | Bullish/Bearish |
+| 公司 | 财报日期 | 对应季度 | 时序 |
+|------|---------|---------|------|
+| [Target] | [Date] | [Quarter] | 参考点 |
+| [Peer 1] | [Date] | [Quarter] | [先发/后发/同天] |
+| [Peer 2] | [Date] | [Quarter] | [先发/后发/同天] |
 
-### 近期变动 → 将发财报（催化剂传导）
+### 已发财报 → 目标（领先指标）
 
-**逻辑**：目标公司近期的业务动态/催化剂 → 为即将发财报的关联公司提供需求/供给信号。
+> 适用条件：同行财报日 **早于** 目标财报日，且为 **同一季度**。
 
-| 关联股(将发) | 市场 | 财报日期 | 联动逻辑 | 方向 |
-|-------------|------|---------|---------|------|
-| [Peer] | [Market] | [Date] | [How target's catalyst affects this peer's likely results] | Bullish/Bearish |
+| 信号源(先发) | 信号内容 | 参考意义(对目标) | 影响 |
+|-------------|---------|----------------|------|
+| [Peer] | [Earnings beat/miss, stock reaction, guidance] | [What this implied for target's upcoming report] | Bullish/Bearish |
+
+### 目标 → 待发财报（领先指标）
+
+> 适用条件：目标财报日 **早于** 同行财报日，且为 **同一季度**。
+
+| 待发股 | 市场 | 财报日期 | 联动逻辑 | 方向 |
+|--------|------|---------|---------|------|
+| [Peer] | [Market] | [Date] | [How target's results provide signal for this peer] | Bullish/Bearish |
 
 > 如无近期财报事件，则基于行业趋势和常规定价逻辑分析。
 

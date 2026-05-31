@@ -180,12 +180,23 @@ For each peer (parallel via SubAgent if multiple):
 
 ### 2.4 Bidirectional Prediction (earnings-centric)
 
-Focus on **earning season signal transmission** between target and peers:
+Focus on **earning season signal transmission** between target and peers. Two critical rules:
 
-| Direction | Focus | Logic |
-|-----------|-------|-------|
-| **Peer (已发财报) → Target (将发财报)** | **Peers that already reported** — their results (beat/miss), stock reaction, and guidance changes → signal what to expect for the **target's upcoming earnings**. Most useful when target is about to report. | Peer's earnings beat/miss → infer target's likely outcome. Peer's stock price reaction → infer market sentiment for the sector. |
-| **Target (近期变动) → Peer (将发财报)** | **Peers with upcoming earnings** — the target's recent catalysts (product launches, policy wins, demand signals) → provide reference for what peers might report. Most useful when peers are about to report. | Target's strong quarter → suggest peers may also beat. Target's weak guidance → peers likely face same headwinds. |
+> **Rule 1 — Same-quarter alignment**: Only compare results from the **same fiscal period**. Don't compare DELL's Q1 with Lenovo's full year — different period lengths, different conclusions. Prioritize peers reporting in the same quarter as the target.
+>
+> **Rule 2 — Earnings date as reference point**: The reference time for assessing earnings transmission value is the **target stock's earnings date**, NOT the user's current query time.
+> - Results that the target did NOT know at its earnings date → cannot be used for prediction, only for post-hoc confirmation
+> - Results that the target DID know at its earnings date → strong reference value
+> - Example: Lenovo reported May 22, DELL reported May 28. On Lenovo's earnings date (May 22), DELL's results were unknown → "DELL helped predict Lenovo" is incorrect. Correct: **Lenovo reported first (May 22), DELL reported later (May 28), DELL's results confirmed the trend Lenovo revealed.**
+
+The chronological framework:
+
+| Chronology | Target | Peer | Transmission Value |
+|------------|--------|------|-------------------|
+| **Peer first → Target later** (同季度) | Target about to report | Peer already reported same quarter | ✅ **最强** — peer results are a leading indicator for target |
+| **Target first → Peer later** (同季度) | Target already reported | Peer about to report same quarter | ✅ **强** — target results become leading indicator for peer |
+| **Cross-quarter** | Different quarters | Different quarters | ⚠️ 弱 — note the mismatch, avoid strong conclusions |
+| **Both already reported** | Already reported | Already reported | ❌ 无新传导 — 可做事后验证，不作预测 |
 
 For **non-earnings periods**, fall back to general correlation logic:
 - **Multi-relationship peers** (e.g., competitor + supplier): identify which relationship dominates the peer's stock reaction
