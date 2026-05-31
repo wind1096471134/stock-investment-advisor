@@ -113,19 +113,25 @@ After analysis, output strictly following the structure below. Keep concise — 
 
 ---
 
-## 🔄 Bidirectional Logic
+## 🔄 双向预测逻辑
 
-### Peer → Target
+### 已发财报 → 将发财报（信号传导）
 
-| Source | Signal | Impact | Logic |
-|--------|--------|--------|-------|
-| [Peer] | [Recent price move / earnings result / industry news] | Bullish/Bearish | [1 line] |
+**逻辑**：关联公司已公布的财报结果 → 为目标公司即将发布的财报提供参考信号。
 
-### Target → Peer
+| 信号源(已发) | 信号内容 | 对目标参考意义 | 影响方向 |
+|-------------|---------|--------------|---------|
+| [Peer] | [Earnings beat/miss, stock reaction, guidance] | [What this implies for target's upcoming earnings] | Bullish/Bearish |
 
-| Peer | Market | Earnings Date | Direction | Logic |
-|------|--------|--------------|-----------|-------|
-| [Peer] | [Market] | [Date] | Bullish/Bearish | [1 line] |
+### 近期变动 → 将发财报（催化剂传导）
+
+**逻辑**：目标公司近期的业务动态/催化剂 → 为即将发财报的关联公司提供需求/供给信号。
+
+| 关联股(将发) | 市场 | 财报日期 | 联动逻辑 | 方向 |
+|-------------|------|---------|---------|------|
+| [Peer] | [Market] | [Date] | [How target's catalyst affects this peer's likely results] | Bullish/Bearish |
+
+> 如无近期财报事件，则基于行业趋势和常规定价逻辑分析。
 
 ---
 

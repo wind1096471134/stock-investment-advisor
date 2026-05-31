@@ -173,12 +173,18 @@ For each peer (parallel via SubAgent if multiple):
 - Earnings status: already reported (beat/miss) / upcoming (date)
 - **Market**: A-share / HK / US + exchange
 
-### 2.4 Bidirectional Prediction (1–2 week window)
+### 2.4 Bidirectional Prediction (earnings-centric)
 
-| Direction | Logic |
-|-----------|-------|
-| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment, **recent policy changes** → infer target follow/diverge/lag. For **investor/investee** relationships: changes in the investor's financial health or strategic direction may signal support/risk for the investee. **For multi-relationship peers (e.g., competitor + supplier): identify which relationship dominates the peer's stock reaction before inferring target impact.** |
-| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings. **Policy changes affecting the target often ripple to peers** — consider whether policy is sector-wide or company-specific. For **investor/investee** relationships: target's IPO/earnings success may affect the investor's portfolio valuation. **⚠️ If the peer's profit driver differs from the overlapping segment with the target, the peer may move independently or even opposite to the target — flag this explicitly.** |
+Focus on **earning season signal transmission** between target and peers:
+
+| Direction | Focus | Logic |
+|-----------|-------|-------|
+| **Peer (已发财报) → Target (将发财报)** | **Peers that already reported** — their results (beat/miss), stock reaction, and guidance changes → signal what to expect for the **target's upcoming earnings**. Most useful when target is about to report. | Peer's earnings beat/miss → infer target's likely outcome. Peer's stock price reaction → infer market sentiment for the sector. |
+| **Target (近期变动) → Peer (将发财报)** | **Peers with upcoming earnings** — the target's recent catalysts (product launches, policy wins, demand signals) → provide reference for what peers might report. Most useful when peers are about to report. | Target's strong quarter → suggest peers may also beat. Target's weak guidance → peers likely face same headwinds. |
+
+For **non-earnings periods**, fall back to general correlation logic:
+- **Multi-relationship peers** (e.g., competitor + supplier): identify which relationship dominates the peer's stock reaction
+- **⚠️ Profit driver divergence**: if the peer's profit driver differs from the overlapping segment with the target, the peer may move independently or even opposite — flag this explicitly.
 
 Each prediction must include:
 
