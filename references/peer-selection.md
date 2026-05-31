@@ -52,6 +52,24 @@ A company qualifies as a "leader" if it meets any of:
 | **Investor** | **Strategic shareholder (holds stake in target or target holds stake in them)** | **Search `{company} major shareholders strategic investors`; `{company} invested in`; check S-1 / annual report "related party transactions"** |
 | **Investee** | **Company that the target has invested in** | **Search `{company} strategic investments portfolio`; `{company} venture arm`** |
 
+> ⚠️ **Multi-relationship**: A peer can have **multiple simultaneous relationships** with the target. E.g., Samsung competes with Apple in smartphones AND supplies Apple with memory chips (upstream). **Always decompose the peer's business segments before making a directional judgment — the segment most relevant to the target may not be the peer's profit driver.**
+
+---
+
+## Peer Business Segment Decomposition
+
+Before analyzing any peer, **determine which business segments drive its profits, not just which segments overlap with the target.**
+
+| Step | Search Query | Purpose |
+|------|-------------|---------|
+| 1 | `{peer company} revenue breakdown by segment 2026` | Get segment-level revenue/profit split |
+| 2 | `{peer company} operating profit by division` | Identify the real profit driver (may differ from revenue share) |
+| 3 | Compare: **segment overlapping with target** vs **segment driving peer's profit** | If they differ, the peer's stock may move counter to the target |
+
+**Example**: Samsung competes with Apple in phones (~20% of Samsung revenue), but its semiconductor division drives ~50%+ of profit. A memory upcycle → Samsung stock rallies even as phone market shrinks.
+
+**Rule**: **Don't assume the overlapping segment is the peer's profit driver. Always check the full segment breakdown before making a directional prediction.**
+
 ---
 
 ## Industry Chain & Investment Identification Flow
@@ -64,6 +82,13 @@ A company qualifies as a "leader" if it meets any of:
 6. Extract 2–3 frequently mentioned company names from results
 7. Verify they are publicly traded (have a ticker/code) — **note their listing market**
 8. Filter by market cap / industry position to select leaders, **preferring a mix of markets when equally matched**
+
+### After selecting peers, decompose each peer's business:
+
+9. WebSearch: `{peer company} revenue breakdown by segment` — identify the peer's true profit driver
+10. Compare: does the peer's profit driver align with the segment overlapping the target, or is it something different?
+    - **If aligned** → the overlap segment moves the peer's stock → standard bidirectional logic applies
+    - **If different** → the peer may move independently or opposite to the target → **flag this explicitly in the prediction**
 
 ---
 
@@ -116,3 +141,5 @@ After selecting peers, confirm:
 - [ ] Relationship type marked (same sector / upstream / downstream / competitor / **investor / investee**)
 - [ ] **Investment relationships searched** — did not limit to same-sector peers only
 - [ ] **Cross-market search done** — searched `{industry} global top companies ranking` not just `{market} {sector} stocks`
+- [ ] **⚠️ Business segment decomposed** — searched `{peer} revenue breakdown by segment` for each peer; confirmed whether the overlapping segment is the peer's real profit driver
+- [ ] **Multi-relationship flagged** — if peer has multiple relationships with target (e.g., competitor + supplier), all are noted

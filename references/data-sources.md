@@ -273,6 +273,25 @@ English:
 {company name} equity ownership structure
 ```
 
+### Business segment decomposition (peer profit driver)
+
+> 🔑 **Critical**: A peer may compete with the target in one segment but derive profits from a completely different one. Always decompose the peer's business before making directional predictions.
+
+Chinese:
+```
+{公司名} 业务构成 收入占比 利润来源
+{公司名} 各业务板块 营收 利润
+```
+
+English:
+```
+{company name} revenue breakdown by segment 2026
+{company name} operating profit by division
+{company name} business segment profit contribution
+```
+
+---
+
 ### Technical analysis
 
 > 🔑 **Key for short-term (1–2 week) outlook**: technical signals often matter more than fundamentals for this timeframe.
@@ -365,5 +384,6 @@ trending stocks last month {market}
 7. **Search beyond same sector**: always search for strategic investors / major shareholders / portfolio companies — these relationships often cross industry boundaries and are easy to miss.
 8. **Search beyond same market**: for global industries, the top competitor may list in a different market. Use market-agnostic queries like `{industry} global market share leaders` instead of `{market} {industry} stocks`.
 9. **Include technical & capital flow signals**: for short-term (1–2 week) outlooks, technical indicators (support/resistance, MA, RSI) and capital flow data (institutional flow, north-bound flow) are often more useful than fundamentals.
-10. **Check valuation percentile**: absolute PE is less informative than PE relative to historical range — search for "PE at 5-year XX% percentile" to gauge valuation context.
-11. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.
+10. **Decompose peer business segments**: a peer's profit driver may differ from the segment it shares with the target. Search `{peer} revenue breakdown by segment` for every peer before making directional predictions.
+11. **Check valuation percentile**: absolute PE is less informative than PE relative to historical range — search for "PE at 5-year XX% percentile" to gauge valuation context.
+12. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.

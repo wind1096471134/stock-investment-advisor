@@ -163,6 +163,7 @@ For each peer (parallel via SubAgent if multiple):
 
 - ~1–2W price trend + ~1M fundamental changes
 - Key financials (revenue growth, gross margin, PE/PB, debt ratio — from latest earnings, max 3 items)
+- **⚠️ Business segment decomposition**: search `{peer} revenue breakdown by segment` and `{peer} operating profit by division`. Identify the peer's real profit driver — it may differ from the segment that overlaps with the target. Flag any divergence.
 - Product/market dynamics (market share, orders)
 - **Policy / regulatory impact**: recent 1–2 months sector-specific policies that affect this peer
 - Earnings status: already reported (beat/miss) / upcoming (date)
@@ -172,8 +173,8 @@ For each peer (parallel via SubAgent if multiple):
 
 | Direction | Logic |
 |-----------|-------|
-| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment, **recent policy changes** → infer target follow/diverge/lag. For **investor/investee** relationships: changes in the investor's financial health or strategic direction may signal support/risk for the investee. |
-| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings. **Policy changes affecting the target often ripple to peers** — consider whether policy is sector-wide or company-specific. For **investor/investee** relationships: target's IPO/earnings success may affect the investor's portfolio valuation.
+| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment, **recent policy changes** → infer target follow/diverge/lag. For **investor/investee** relationships: changes in the investor's financial health or strategic direction may signal support/risk for the investee. **For multi-relationship peers (e.g., competitor + supplier): identify which relationship dominates the peer's stock reaction before inferring target impact.** |
+| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings. **Policy changes affecting the target often ripple to peers** — consider whether policy is sector-wide or company-specific. For **investor/investee** relationships: target's IPO/earnings success may affect the investor's portfolio valuation. **⚠️ If the peer's profit driver differs from the overlapping segment with the target, the peer may move independently or even opposite to the target — flag this explicitly.** |
 
 Each prediction must include:
 
