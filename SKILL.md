@@ -34,10 +34,13 @@ Deliver a 1–2 week directional outlook. No third-party API, no paid data sourc
 - Forbidden: specific buy/sell price levels. Use **Bullish / Bearish / Neutral** instead of Buy / Sell
 - **Required peer fields**: every peer stock must include ticker, market (A-share / HK / US), and earnings status (already reported / upcoming + date)
 - **Earnings date must be precise**: label with exact date when found (e.g., "Jun 3, 2026"). If exact date not available via public search, mark as "未获取到具体日期" / "Exact date not found". Never fabricate or guess.
-- **财报传导标注**: in Associated Stock Predictions, mark each peer with ✅ (strong earnings transmission value) or ❌ (none). Criteria:
-  - ✅ if peer already reported earnings → provides reference for target's upcoming report
-  - ✅ if target has recent catalysts → provides signal for peer's upcoming report
-  - ❌ if no such earnings-centric linkage exists
+- **财报传导标注**: in Associated Stock Predictions, mark each peer based on **chronological relationship** between target and peer earnings dates:
+
+| 时序 | 传导方向 | 标注 |
+|------|---------|------|
+| **目标先发** (earlier) → **同行后发** (later) | 目标财报结果→同行的领先指标 | ✅ 目标先发, 对同行有传导价值 |
+| **同行先发** (earlier) → **目标后发** (later) | 同行财报结果→目标的领先指标 | ✅ 同行先发, 对目标有传导价值 |
+| **均无近期财报**或时期完全不重叠 | 无传导链路 | ❌ 暂无强传导 |
 
 ---
 

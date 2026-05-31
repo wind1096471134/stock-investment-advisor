@@ -206,14 +206,14 @@ This report is compiled from publicly available information for research referen
 
 | Stock | Market | Relationship | Direction | Catalyst | Earnings | 财报传导 | Confidence |
 |-------|--------|-------------|-----------|----------|----------|---------|------------|
-| 002594 BYD | A-share (SZ) | Competitor | Bullish | NEV sales momentum + Q1 beat | Apr 24, 2026 | ✅ BYD已发→CATL将发财报参考 | Medium |
-| 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Apr 22, 2026 | ✅ 竞争加剧→CATL利润率有保障 | Medium |
+| 002594 BYD | A-share (SZ) | Competitor | Bullish | NEV sales momentum + Q1 beat | Apr 24, 2026 | ✅ BYD先发→CATL后发参考 | Medium |
+| 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Apr 22, 2026 | ✅ 先发→CATL后发验证竞争加剧 | Medium |
 
 **Tier 2 (Supplementary)** — Upstream / Investor *(only if strongly correlated)*
 
 | Stock | Market | Relationship | Direction | Catalyst | Earnings | 财报传导 | Confidence |
 |-------|--------|-------------|-----------|----------|----------|---------|------------|
-| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5, 2026 | ❌ 上游涨价对CATL成本影响有限 | Medium |
+| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5, 2026 | ❌ 财报日期在CATL之后，无传导 | Medium |
 
 ---
 
