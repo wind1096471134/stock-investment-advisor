@@ -1,6 +1,8 @@
-# Stock Investment Advisor — Claude Code Skill
+# Stock Investment Advisor — Agent Skill
 
 > Analyze stocks (A-shares / HK / US) using WebSearch only — no API keys, no Python packages, no paid data sources. Provides 1–2 week directional outlooks based on publicly available information.
+
+Works with **Claude Code, Cursor, Codex, Gemini CLI, Windsurf, and any agent system** that supports the `~/.claude/skills/` skill format.
 
 ---
 
@@ -40,26 +42,33 @@ ln -s "$(pwd)/stock-investment-advisor" ~/.claude/skills/
 
 #### Verify
 
-Restart Claude Code, then type:
+Restart your agent, then type:
 
 ```
 /stock-investment-advisor
 ```
 
-Or just ask a stock-related question — the skill auto-triggers on queries like "分析茅台" or "Analyze AAPL".
+Or just ask a stock-related question — the skill auto-triggers on queries like:
+
+```
+"分析一下贵州茅台"
+"What's your outlook on AAPL this week?"
+"美光下周发财报，有什么预期？"
+```
 
 #### Platform Compatibility
 
-| Platform | Supported | Notes |
-|----------|-----------|-------|
-| **Claude Code CLI** | ✅ | `claude` terminal app |
-| **Claude Code Desktop** | ✅ | macOS / Windows desktop app |
-| **Claude Code VS Code Extension** | ✅ | Install from VS Code marketplace |
-| **Claude Code JetBrains Plugin** | ✅ | Install from JetBrains marketplace |
-| **Cursor / Windsurf** | ✅ | Symlink into `~/.claude/skills/` |
-| **Other Claude Code IDEs** | ✅ | Any platform that loads `~/.claude/skills/` |
+| Agent / Platform | Compatibility | Notes |
+|---|---|---|
+| **Claude Code** | ✅ | CLI / Desktop / VS Code / JetBrains |
+| **Cursor** | ✅ | Symlink into `~/.claude/skills/` |
+| **Codex CLI** | ✅ | Supports `~/.claude/skills/` format |
+| **Gemini CLI** | ✅ | Same install path |
+| **Windsurf** | ✅ | Symlink into `~/.claude/skills/` |
+| **Cline / Roo Code** | ✅ | Supports SKILL.md format |
+| **Other agents** | ✅ | Any system that loads skills from `~/.claude/skills/` |
 
-All Claude Code variants load skills from `~/.claude/skills/` — the same install method works everywhere.
+The `~/.claude/skills/` directory is widely supported across agent ecosystems — the same install method works everywhere.
 
 Or let the skill auto-trigger on stock-related queries — works in both English and Chinese.
 
@@ -96,10 +105,10 @@ No configuration needed — the skill detects your language and adapts the full 
 ### 🧠 How It Works
 
 ```
-User input (stock codes or names)
-  ├─ 1–3 stocks → Analysis pipeline (web search → data collection → report)
-  ├─ >3 stocks → Ask to narrow to 3
-  └─ No stock → Guidance flow (market + sector selection)
+User asks about a stock →
+  ├─ WebSearch collects: price, technicals, earnings, news, peers, policy
+  ├─ Multi-dimension analysis → Executive Summary
+  └─ Structured report with predictions
 ```
 
 ### Data Sources (WebSearch only)
@@ -112,7 +121,7 @@ User input (stock codes or names)
 | SEC EDGAR | US filings | Global |
 | HKEX披露易 | HK stocks | Global |
 
-All accessible via Claude Code's **WebSearch** / **WebFetch** — no API keys needed.
+All accessible via your agent's **WebSearch** / **WebFetch** — no API keys needed.
 
 ### 📄 Report Structure
 
@@ -209,10 +218,11 @@ MIT — see [LICENSE](./LICENSE).
 **Not financial advice.** This tool analyzes publicly available information for research reference only. Stock markets involve significant risk. Always make independent decisions and consult licensed professionals.
 
 ---
+# Stock Investment Advisor — 通用 Agent 技能
 
-<div id="中文说明"></div>
+> 基于公开网络搜索（WebSearch）分析 A 股 / 港股 / 美股上市公司，无需任何 API Key、Python 包或付费数据源。提供 1-2 周走势研判。
 
-## 中文说明
+支持 **your agent、Cursor、Codex、Gemini CLI、Windsurf** 等任意兼容 `~/.claude/skills/` 格式的 Agent 平台。
 
 ### 🚀 快速安装
 
@@ -241,26 +251,33 @@ ln -s "$(pwd)/stock-investment-advisor" ~/.claude/skills/
 
 #### 验证
 
-重启 Claude Code 后输入：
+重启后直接提问，例如：
+
+```
+分析一下贵州茅台
+AAPL 这周走势怎么看？
+美光下周发财报，有什么预期？
+```
+
+或使用斜杠命令（如果你的 agent 支持）：
 
 ```
 /stock-investment-advisor
 ```
 
-或直接问股票相关的问题，技能会自动触发。
-
 #### 平台兼容性
 
-| 平台 | 支持 | 说明 |
-|------|------|------|
-| **Claude Code CLI** | ✅ | 终端 `claude` 命令 |
-| **Claude Code 桌面版** | ✅ | macOS / Windows 桌面应用 |
-| **Claude Code VS Code 扩展** | ✅ | VS Code 插件市场安装 |
-| **Claude Code JetBrains 插件** | ✅ | JetBrains 插件市场安装 |
-| **Cursor / Windsurf** | ✅ | 软链接到 `~/.claude/skills/` |
-| **其他 Claude Code IDE** | ✅ | 任何支持 `~/.claude/skills/` 的平台 |
+| Agent / 平台 | 兼容性 | 说明 |
+|---|---|---|
+| **Claude Code** | ✅ | CLI / 桌面版 / VS Code / JetBrains |
+| **Cursor** | ✅ | 软链到 `~/.claude/skills/` |
+| **Codex CLI** | ✅ | 支持 `~/.claude/skills/` 格式 |
+| **Gemini CLI** | ✅ | 同一安装路径 |
+| **Windsurf** | ✅ | 软链到 `~/.claude/skills/` |
+| **Cline / Roo Code** | ✅ | 支持 SKILL.md 格式 |
+| **其他 Agent** | ✅ | 从 `~/.claude/skills/` 加载技能的均可 |
 
-所有 Claude Code 变体都从 `~/.claude/skills/` 加载技能——安装方法完全统一。
+`~/.claude/skills/` 目录已被广泛支持——安装一次，随处可用。
 
 ### ✨ 功能一览
 
@@ -293,10 +310,10 @@ ln -s "$(pwd)/stock-investment-advisor" ~/.claude/skills/
 ### 🧠 工作流程
 
 ```
-用户输入（股票代码或名称）
-  ├─ 1～3 只 → 分析流程（搜索 → 数据采集 → 报告生成）
-  ├─ >3 只 → 要求缩减至 3 只
-  └─ 无股票 → 引导流程（选择市场 + 板块）
+用户提问某只股票 →
+  ├─ WebSearch 采集：价格、技术面、财报、新闻、同行、政策
+  ├─ 多维度分析 → 综合结论
+  └─ 结构化报告输出
 ```
 
 ### 数据来源（仅 WebSearch）
