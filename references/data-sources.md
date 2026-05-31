@@ -224,6 +224,24 @@ English:
 {company name} vs competitors market share
 ```
 
+### Policy & regulatory changes
+
+> 🔑 **Critical**: Policy changes can have outsized impact on stock prices in regulated industries (energy, auto, healthcare, telecom, finance, space, defense). Search specifically for recent 1–2 month policy developments.
+
+Chinese:
+```
+{行业} 政策 最新 2026
+{公司名} 政策影响 监管
+{行业} 补贴 关税 法规 近两个月
+```
+
+English:
+```
+{industry/sector} regulation policy change 2026
+{company name} regulatory impact tariff
+{industry} subsidy tax policy update
+```
+
 ### Strategic investment / cross-ownership
 
 > ⚠️ **Important**: Investment relationships often cross sectors (e.g., a tech giant investing in a space/auto company). Search broadly — don't limit to the same industry.

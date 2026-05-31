@@ -87,6 +87,7 @@ The following qualify as "significant movement" — prioritize for peer analysis
 - Single-day volume > 2× 20-day average
 - Major announcement (M&A, capital raise, earnings pre-announcement, policy impact)
 - Concentrated analyst rating changes (upgrades/downgrades)
+- **Recent policy/regulatory change** affecting the sector (tariffs, subsidies, antitrust, new laws — even if stock price hasn't reacted yet)
 
 WebSearch templates:
 ```

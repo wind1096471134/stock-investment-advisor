@@ -18,12 +18,14 @@ After analysis, output strictly following the structure below. Keep concise — 
 | **Direction** | Bullish / Bearish / Neutral | [Core financial logic + peer reference] |
 | **Confidence** | High / Medium / Low | [1-line explanation] |
 | **Key Catalyst** | [Event] | [Timeline] |
+| **Policy** | Bullish / Bearish / Neutral | [Recent 1–2 month policy/regulatory change and its impact] |
 | **Primary Risk** | [Counter-argument] | [At least 1 item] |
 
 ### Rationale
 
 - **Fundamentals**: [Target company key financials: revenue growth, PE, gross margin, etc. + comparison with peers]
 - **Catalyst**: [Earnings/policy/product launch etc. + date]
+- **Policy**: [Recent 1–2 month policy/regulatory change affecting the target or its sector — tariffs, subsidies, antitrust, new laws, geopolitical events]
 - **Peer reference**: [How peer performance supports or contradicts the thesis]
 - **Valuation**: [PE/PB vs peers]
 - **Risk**: [At least 1 counter factor]
@@ -126,12 +128,14 @@ This report is compiled from publicly available information for research referen
 | **Direction** | Bullish | Revenue growth +18% vs industry avg +12%; PE 22x vs industry 25x, reasonable |
 | **Confidence** | Medium | Auto sector competition intensifying; further gross margin decline could pressure valuation |
 | **Key Catalyst** | Energy storage orders + lithium price stabilization | Q2 policy tailwinds for storage; lithium price expected to rebound further in June |
+| **Policy** | Bullish | China's Q2 2026 energy storage subsidy policy + battery recycling mandates favor tier-1 battery makers; NEV purchase tax exemption extended through 2027 |
 | **Primary Risk** | EV battery peers' gross margin decline reflects intensifying competition | If BYD June sales miss, may drag the sector |
 
 ### Rationale
 
 - **Fundamentals**: CATL Q1 revenue +18%, gross margin 26.5%, net profit +22% — all sector-leading. PE 22x below industry avg of 25x.
 - **Catalyst**: Q2 energy storage policy push, expected 20%+ new orders. Lithium stabilized at ~¥80K/ton, easing cost pressure.
+- **Policy**: China extended NEV purchase tax exemption through 2027; new energy storage subsidies effective Q2 favor large battery makers like CATL. EU battery carbon footprint rules create a barrier for smaller competitors.
 - **Peer reference**: BYD Q1 beat (revenue +30%), downstream demand strong; Yiwei Lithium gross margin -2.1% signals competition favoring the leader.
 - **Valuation**: PE 22x vs Yiwei's 28x — relative value advantage.
 - **Risk**: If auto sales miss expectations, the sector could be dragged down; storage order conversion pace uncertain.

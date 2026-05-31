@@ -131,7 +131,8 @@ For each target stock (parallel via SubAgent if multiple):
 
 - **Price data**: current price, ~1W / ~1M change (search stock price pages)
 - **Basic info**: sector, market cap range
-- **Major events**: past month earnings, policy, products, litigation, etc.
+- **Major events**: past month earnings, products, litigation, etc.
+- **Policy / regulatory changes**: past 1–2 months industry-specific policies, tariffs, subsidies, antitrust actions, or geopolitical events affecting the sector
 - **Earnings calendar**: upcoming earnings date (if any)
 - **Key financials**: revenue growth, PE, gross margin (for peer comparison, max 3 items)
 - **Strategic relationships**: major shareholders, strategic investors, and portfolio companies (cross-sector relationships are easy to miss — search explicitly)
@@ -157,7 +158,8 @@ For each peer (parallel via SubAgent if multiple):
 
 - ~1–2W price trend + ~1M fundamental changes
 - Key financials (revenue growth, gross margin, PE/PB, debt ratio — from latest earnings, max 3 items)
-- Product/market dynamics (market share, orders, policy impact)
+- Product/market dynamics (market share, orders)
+- **Policy / regulatory impact**: recent 1–2 months sector-specific policies that affect this peer
 - Earnings status: already reported (beat/miss) / upcoming (date)
 - **Market**: A-share / HK / US + exchange
 
@@ -165,8 +167,8 @@ For each peer (parallel via SubAgent if multiple):
 
 | Direction | Logic |
 |-----------|-------|
-| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment → infer target follow/diverge/lag. For **investor/investee** relationships: changes in the investor's financial health or strategic direction may signal support/risk for the investee. |
-| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings. For **investor/investee** relationships: target's IPO/earnings success may affect the investor's portfolio valuation.
+| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment, **recent policy changes** → infer target follow/diverge/lag. For **investor/investee** relationships: changes in the investor's financial health or strategic direction may signal support/risk for the investee. |
+| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings. **Policy changes affecting the target often ripple to peers** — consider whether policy is sector-wide or company-specific. For **investor/investee** relationships: target's IPO/earnings success may affect the investor's portfolio valuation.
 
 Each prediction must include:
 
