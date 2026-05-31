@@ -134,6 +134,7 @@ For each target stock (parallel via SubAgent if multiple):
 - **Major events**: past month earnings, policy, products, litigation, etc.
 - **Earnings calendar**: upcoming earnings date (if any)
 - **Key financials**: revenue growth, PE, gross margin (for peer comparison, max 3 items)
+- **Strategic relationships**: major shareholders, strategic investors, and portfolio companies (cross-sector relationships are easy to miss — search explicitly)
 
 > Note: exact price/change figures may not be precise. Use approximate values labeled "~" with query date. Trend and relative value matter more than precision.
 
@@ -143,7 +144,10 @@ Follow [references/peer-selection.md](references/peer-selection.md) rules:
 
 1. Top-3 by market cap in same sector, with abnormal ~1M price/volume
 2. Industry chain leaders (suppliers / customers / competitors)
+3. **Strategic investors / investees** (shareholding relationships, even across different sectors)
 3. Companies with recent or upcoming earnings reports
+
+> ⚠️ **Don't limit to same sector.** Strategic investors and major shareholders can be in completely different industries (e.g., a tech giant investing in a space company). Always search for investment relationships explicitly.
 
 Exclude: ST, delisting risk, illiquid small-caps.
 
@@ -161,8 +165,8 @@ For each peer (parallel via SubAgent if multiple):
 
 | Direction | Logic |
 |-----------|-------|
-| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment → infer target follow/diverge/lag |
-| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings |
+| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment → infer target follow/diverge/lag. For **investor/investee** relationships: changes in the investor's financial health or strategic direction may signal support/risk for the investee. |
+| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings. For **investor/investee** relationships: target's IPO/earnings success may affect the investor's portfolio valuation.
 
 Each prediction must include:
 

@@ -224,6 +224,24 @@ English:
 {company name} vs competitors market share
 ```
 
+### Strategic investment / cross-ownership
+
+> ⚠️ **Important**: Investment relationships often cross sectors (e.g., a tech giant investing in a space/auto company). Search broadly — don't limit to the same industry.
+
+Chinese:
+```
+{公司名} 主要股东 战略投资
+{公司名} 投资了哪些公司 参股
+{公司名} 股权结构 大股东
+```
+
+English:
+```
+{company name} major shareholders strategic investors
+{company name} invested in portfolio companies
+{company name} equity ownership structure
+```
+
 ### Earnings calendar
 
 Chinese:
@@ -264,4 +282,5 @@ trending stocks last month {market}
 4. **Recency**: prioritize results from the past month. Label data with the query date.
 5. **No login required**: only use publicly accessible pages.
 6. **Honest reporting**: mark unobtainable data as "Not available." Never fabricate or fall back to any third-party API.
-7. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.
+7. **Search beyond same sector**: always search for strategic investors / major shareholders / portfolio companies — these relationships often cross industry boundaries and are easy to miss.
+8. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.

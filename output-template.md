@@ -42,7 +42,7 @@ After analysis, output strictly following the structure below. Keep concise — 
 
 | Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
 |-------|--------|-------------|-----------|----------|---------------|------------|
-| [Ticker] | [A-share/HK/US] | Same sector/Upstream/Downstream/Competitor | Bullish/Bearish/Neutral | [Event] | [Date] | High/Med/Low |
+| [Ticker] | [A-share/HK/US] | Same sector/Upstream/Downstream/Competitor/Investor/Investee | Bullish/Bearish/Neutral | [Event] | [Date] | High/Med/Low |
 
 ---
 
@@ -67,8 +67,8 @@ After analysis, output strictly following the structure below. Keep concise — 
 
 | Company | Ticker | Market | Relationship | Price | ~1W | ~1M | Key Change | Earnings Status |
 |---------|--------|--------|-------------|-------|-----|-----|------------|----------------|
-| [Name] | [code] | [Market] | [Relation] | [$X] | [+X%] | [+X%] | [1 line] | [Already out / Upcoming(date)] |
-| [Name] | [code] | [Market] | [Relation] | [$X] | [+X%] | [+X%] | [1 line] | [Already out / Upcoming(date)] |
+| [Name] | [code] | [Market] | Same sector/Upstream/Downstream/Competitor/Investor/Investee | [$X] | [+X%] | [+X%] | [1 line] | [Already out / Upcoming(date)] |
+| [Name] | [code] | [Market] | Same sector/Upstream/Downstream/Competitor/Investor/Investee | [$X] | [+X%] | [+X%] | [1 line] | [Already out / Upcoming(date)] |
 
 ### Key Financial Comparison
 
@@ -146,6 +146,7 @@ This report is compiled from publicly available information for research referen
 | 002594 BYD | A-share | Downstream | Bullish | NEV sales continuing to beat | Already out (Q1 beat) | Medium |
 | 002460 Ganfeng Lithium | A-share | Upstream | Bullish | Lithium price rebound | Upcoming (Jun 5) | Medium |
 | 300014 Yiwei Lithium | A-share | Competitor | Bearish | Gross margin pressure continues | Already out (Q1 miss) | Medium |
+| GOOGL Alphabet | US (NASDAQ) | **Investor** | Bullish | Investee's cloud momentum signals AI infra tailwinds | Already out (Q1 beat) | Low |
 
 ---
 
@@ -195,6 +196,7 @@ This report is compiled from publicly available information for research referen
 | BYD | Q1 revenue +30%, sales beat | Bullish | Strong downstream demand directly benefits CATL as primary supplier |
 | Ganfeng | Lithium price stabilizing + ~5% rebound | Bullish | Cost pressure easing, gross margin improvement expected |
 | Yiwei | Gross margin -2.1pp | CATL-Bullish | Tier-2 players struggling, concentration shifting to leader |
+| **Alphabet (GOOGL)** | **SpaceX early investor; Google Cloud +63%** | **Bullish** | **Investee's IPO validates AI infra spend thesis — positive signal for parent's investment portfolio** |
 
 ### Target → Peer
 
@@ -222,3 +224,4 @@ This report is compiled from publicly available information for research referen
 6. **Missing data**: fill table cells with "Not available" — never fabricate
 7. **Required peer fields**: ticker + market (A-share/HK/US) + earnings status
 8. **Financial comparison table**: target + peers in one table, at minimum revenue growth, PE, gross margin
+9. **Don't limit to same sector**: investor/investee relationships can cross sectors — search for strategic shareholders and portfolio companies
