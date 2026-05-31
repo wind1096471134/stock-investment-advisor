@@ -1,194 +1,197 @@
 ---
 name: stock-investment-advisor
 description: >
-  Analyze stocks (A-shares/HK/US) with WebSearch-only, no API.
-  分析上市公司股票并给出客观投资建议。用户提到股票分析、投资建议、
-  板块热点、关联公司预测、财报影响、A股/港股/美股 时使用。
-  触发词：分析股票、投资建议、看好/看空、板块、热门股、上下游、
-  关联公司、财报、预测走势 等。
+  Analyze stocks (A-shares/HK/US) using WebSearch only — no API keys,
+  no Python packages, no paid data sources. Provides 1-2 week directional
+  outlooks based on publicly available information.
 ---
 
-# 股票投资分析
+# Stock Investment Advisor
 
-基于**纯公开网络信息**（WebSearch / WebFetch）分析上市公司，给出 1～2 周走势研判。
-不依赖任何第三方 API、付费数据源或专用金融库（如 yfinance、akshare 等）。
-
-## 数据来源核心原则
-
-1. **仅用 WebSearch / WebFetch** — 从公开网页获取信息，不调用任何第三方金融 API
-2. **纯文本搜索** — 不安装 Python 包、不调用专有数据接口
-3. **区域可达性** — 不同来源在不同网络区域可达性不同，标注替代源（详见 [references/data-sources.md](references/data-sources.md)）
-4. **如实标注缺失** — 如果某数据通过公开搜索无法获取，标注「未获取到」，不猜测、不编造、不降级到 API
-
-## 交互规范
-
-- 引导：短句 + 编号选项，每轮 ≤2 个问题
-- 分析：**结论先行**（综合结论→预测→详细分析），不重复叙述
-- 数据缺失：标注「未获取到」，不猜测
-- 每家公司最多 3 个关键财务数字
-- **语言检测**：用户用英文提问 → 全流程英文搜索 + 英文输出；用户用中文提问 → 全流程中文搜索 + 中文输出
-- 禁止给出具体买卖价位；用「偏多 / 偏空 / 观望」代替「买入 / 卖出」
-- **关联股票必填**：每个关联股票必须标注代码、市场（A股/港股/美股）、财报状态（已发布/即将发布+日期）
+Analyze listed companies using **public web information only** (WebSearch / WebFetch).
+Deliver a 1–2 week directional outlook. No third-party API, no paid data source, no Python library (yfinance, akshare, etc.).
 
 ---
 
-## 流程总览
+## Data Source Principles
+
+1. **WebSearch / WebFetch only** — obtain everything from public web pages. No third-party financial API.
+2. **Plain text search** — no Python packages, no proprietary data interfaces.
+3. **Regional accessibility** — different sources have different reachability depending on network region. Note alternatives (see [references/data-sources.md](references/data-sources.md)).
+4. **Honest labeling** — if data cannot be obtained via public search, mark it as "Not available." Never guess, fabricate, or fall back to an API.
+
+---
+
+## Interaction Rules
+
+- Guidance: short phrases + numbered options, at most 2 questions per turn
+- Analysis: **conclusion first** (executive summary → predictions → detailed analysis), no repetition
+- Language detection:
+  - User writes in Chinese → full Chinese workflow (Chinese search queries + Chinese output)
+  - User writes in English → full English workflow (English search queries + English output)
+- Data gaps: mark as "Not available" / 「未获取到」, never fabricate
+- At most 3 key financial figures per company
+- Forbidden: specific buy/sell price levels. Use **Bullish / Bearish / Neutral** instead of Buy / Sell
+- **Required peer fields**: every peer stock must include ticker, market (A-share / HK / US), and earnings status (already reported / upcoming + date)
+
+---
+
+## Flow Overview
 
 ```
-用户输入
-  ├─ 已给 1～3 只股票 → 分析流程
-  ├─ 已给 >3 只 → 请缩减至 3 只
-  └─ 未给股票 → 引导流程 → 分析流程
+User input
+  ├─ 1–3 stocks given → Analysis flow
+  ├─ >3 stocks → Ask to narrow to 3
+  └─ No stock → Guidance flow → Analysis flow
 ```
 
 ---
 
-## Step 0：入口路由
+## Step 0: Entry Routing
 
-**股票识别**：
-- A 股：6 位数字（如 `600519`）
-- 港股：5 位数字或 `.HK`（如 `00700`、`09988.HK`）
-- 美股：1～5 位字母（如 `AAPL`、`NVDA`）
-- 中文公司名（如「贵州茅台」「腾讯」）
+**Stock identification**:
+- A-shares: 6-digit code (e.g. `600519`)
+- HK stocks: 5-digit code or `.HK` suffix (e.g. `00700`, `09988.HK`)
+- US stocks: 1–5 letter ticker (e.g. `AAPL`, `NVDA`)
+- Chinese company name (e.g. `贵州茅台`, `腾讯`)
 
-| 条件 | 动作 |
-|------|------|
-| 1～3 只股票 | 跳过引导，进入分析 |
-| >3 只 | 请用户选 3 只以内 |
-| 无股票 | 进入引导 |
-
----
-
-## Step 1：引导流程
-
-**目标**：确定 1～3 只分析对象。最多 2 轮交互。
-
-### 1.1 第 1 轮（AskUserQuestion）
-
-一次性收集（能从上下文推断的项自动填充，不再追问）：
-
-1. **市场**：A 股 / 港股 / 美股 / 不限
-2. **关注方向**：具体板块 / 概念 / 产业链 / 不确定
-
-用户中途直接给出股票名或代码 → 立即结束引导。
-
-### 1.2 第 2 轮（仅「方向不确定」时）
-
-1. WebSearch 查询近 1 个月该市场热门板块/概念（搜索模板见 [references/data-sources.md](references/data-sources.md)）
-2. 整理 **5～8 个选项**供用户选择（板块名 + 1 句热度原因）
-3. 用户选定板块后，给出该板块 **5～10 只头部股票**供选 1～3 只
-
-### 1.3 确认
-
-一句话确认分析对象，例如：「将分析：600519 贵州茅台、002594 比亚迪。开始？」
+| Condition | Action |
+|-----------|--------|
+| 1–3 stocks | Skip guidance, enter analysis |
+| >3 stocks | Ask user to narrow to 3 |
+| No stock | Enter guidance flow |
 
 ---
 
-## 并行策略与 SubAgent 使用
+## Step 1: Guidance Flow
 
-**核心原则**：分析流程中涉及多只股票、多家关联公司时，利用 SubAgent（Agent 工具）进行并行数据采集，大幅缩短总耗时。
+**Goal**: Determine 1–3 stocks to analyze. At most 2 rounds.
 
-### SubAgent 适用场景
+### 1.1 Round 1 (AskUserQuestion)
 
-| 场景 | 并行度 | 说明 |
-|------|--------|------|
-| 目标股票快照（每只） | 每只 1 个 SubAgent | 并行采集价格、事件、财报日期 |
-| 关联公司深度采集（每家） | 每家 1 个 SubAgent | 并行采集基本面、走势、动态 |
-| 产业链/板块搜索 | 1 个 SubAgent | 可单独搜索上下游关系 |
+Collect in one go (auto-fill from context, don't re-ask):
 
-### SubAgent 工作模式
+1. **Market**: A-shares / HK / US / no preference
+2. **Focus**: Specific sector / concept / industry chain / not sure
+
+If user directly gives stock names/codes → end guidance immediately.
+
+### 1.2 Round 2 (only if "not sure")
+
+1. WebSearch for hot sectors/concepts in that market over the past month (search templates in [references/data-sources.md](references/data-sources.md))
+2. Present **5–8 options** (sector name + 1-line reason for popularity)
+3. User picks a sector → list **5–10 top stocks** for them to choose 1–3
+
+### 1.3 Confirmation
+
+One-line confirmation, e.g.: "Analysis target: 600519 贵州茅台, 002594 比亚迪. Proceed?"
+
+---
+
+## Parallel Strategy & SubAgent Usage
+
+**Core principle**: Use SubAgents (Agent tool) to parallelize data collection when analyzing multiple stocks or peer companies.
+
+### SubAgent Applicability
+
+| Scenario | Parallelism | Description |
+|----------|-------------|-------------|
+| Target stock snapshot (per stock) | 1 SubAgent each | Parallel: price, events, earnings date |
+| Peer company deep dive (per peer) | 1 SubAgent each | Parallel: fundamentals, price action, news |
+| Sector/industry chain search | 1 SubAgent | Can search upstream/downstream independently |
+
+### SubAgent Workflow
 
 ```
-主 Agent（我）
-  ├─ SubAgent 1：目标股票 A 数据采集（WebSearch）
-  ├─ SubAgent 2：目标股票 B 数据采集（WebSearch）
-  ├─ SubAgent 3：板块/产业链关系搜索
-  └─ SubAgent 4：关联公司数据采集
+Main Agent (me)
+  ├─ SubAgent 1: Target stock A data (WebSearch)
+  ├─ SubAgent 2: Target stock B data (WebSearch)
+  ├─ SubAgent 3: Sector/industry chain search
+  └─ SubAgent 4: Peer company data
 ```
 
-- **每个 SubAgent 的 prompt 需明确**：要搜索什么关键词、要提取哪些字段、从哪里搜
-- **所有 SubAgent 启动后并行收集**，主 Agent 等待全部完成后再综合分析
-- 各 SubAgent 返回结构化摘要即可，不需要完整报告格式
-- SubAgent 采集数据中如果遇到「该数据无法通过公开搜索获取」，直接标注缺失，不强行编造
+- **Each SubAgent prompt must be explicit**: what keywords to search, what fields to extract, where to search
+- **All SubAgents launch and collect in parallel**; Main Agent waits for all to finish before synthesis
+- Each SubAgent returns a structured summary (not a full report)
+- If a SubAgent encounters data that cannot be obtained via public search, mark it as missing — never fabricate
 
-### 注意事项
+### Notes
 
-- SubAgent 不能嵌套调用 SubAgent（只能主 Agent 调度一层）
-- 简单的单标的 1-2 家公司分析不需要使用 SubAgent，直接在主流程中串行 WebSearch 即可
-- **仅在多标的（≥2 只）或涉及多家关联公司时才启用 SubAgent 并行**
-
----
-
-## Step 2：分析流程
-
-### 2.1 目标股票快照
-
-对每只目标股票收集以下信息（多只股票时使用 SubAgent 并行）：
-
-- **报价数据**：当前价、近 1 周 / 1 月涨跌幅（通过 WebSearch 搜索股价页面）
-- **基本信息**：所属板块、市值区间
-- **重大事件**：近 1 个月财报、政策、产品、诉讼等动态
-- **财报日历**：即将发布财报日期（若有）
-- **关键财务指标**：营收增速、PE、毛利率（用于后续与同行对比，最多 3 项）
-
-**注意**：股价涨跌幅等数值可能无法精确获取，使用近似值并标注「约」和查询日期。
-精度不重要，趋势和相对值更重要。
-
-### 2.2 关联公司筛选（1～3 家）
-
-按 [references/peer-selection.md](references/peer-selection.md) 规则筛选：
-
-1. 同板块市值前 3，且近 1 月涨跌幅或成交量异常
-2. 产业链上下游龙头（供应商 / 客户 / 竞品）
-3. 近期已发或即将发财报的头部公司
-
-排除：ST、退市风险、流动性极差的小票。
-
-### 2.3 关联公司深度采集
-
-每家关联公司收集以下信息（多只时使用 SubAgent 并行）：
-
-- 近 1～2 周股价走势 + 近 1 月基本面变化
-- 关键财务指标（营收增速、毛利率、PE/PB、负债率 — 通过最新财报搜索获取，最多 3 项）
-- 产品/市场动态（市占率、订单、政策影响）
-- 财报状态：已发布（beat/miss）/ 即将发布（日期）
-- **所在市场**：A股/港股/美股 + 交易所
-
-### 2.4 双向预测（1～2 周窗口）
-
-| 方向 | 逻辑 |
-|------|------|
-| **关联 → 目标** | 关联公司近期涨跌、财报超预期/不及预期、行业景气 → 推断目标股跟涨/跟跌/滞后 |
-| **目标 → 关联** | 目标股催化剂 → 推断哪些关联股可能联动，标注即将发财报者 |
-
-每条预测必须包含：
-
-- **方向**：偏多 / 偏空 / 震荡
-- **置信度**：高 / 中 / 低（附 1 句依据）
-- **关键催化剂**：具体事件 + 时间
-- **反面论据**：至少 1 条
-- **关联股票必填**：代码 + 市场（A股/港股/美股）+ 财报日期
+- SubAgents **cannot** nest further SubAgents (1 level only)
+- Simple 1–2 stock analysis does not need SubAgents — serial WebSearch is fine
+- **SubAgents only when ≥2 target stocks or multiple peer companies**
 
 ---
 
-## Step 3：输出报告
+## Step 2: Analysis Flow
 
-严格按 [output-template.md](output-template.md) 格式输出。报告结构为：
+### 2.1 Target Stock Snapshot
 
-1. **综合结论（最顶部）** — 操作建议、核心逻辑、关键催化剂与风险
-2. **预测汇总** — 目标股与关联股的预测方向、市场、财报日期
-3. **目标股票快照** — 价格、涨跌幅、市值、PE等
-4. **关联公司深度分析** — 含市场、财报日期、财务对比表
-5. **双向预测逻辑** — 关联→目标 和 目标→关联的联动分析
+For each target stock (parallel via SubAgent if multiple):
 
-报告末尾**必须**输出风险提示（verbatim）：
+- **Price data**: current price, ~1W / ~1M change (search stock price pages)
+- **Basic info**: sector, market cap range
+- **Major events**: past month earnings, policy, products, litigation, etc.
+- **Earnings calendar**: upcoming earnings date (if any)
+- **Key financials**: revenue growth, PE, gross margin (for peer comparison, max 3 items)
 
-> 以上内容基于公开信息整理，仅为研究参考，**不构成投资建议**。股市有风险，短期走势受政策、资金、情绪等多因素影响，预测存在较大不确定性。请独立判断，谨慎决策。
+> Note: exact price/change figures may not be precise. Use approximate values labeled "~" with query date. Trend and relative value matter more than precision.
+
+### 2.2 Peer Company Selection (1–3 peers)
+
+Follow [references/peer-selection.md](references/peer-selection.md) rules:
+
+1. Top-3 by market cap in same sector, with abnormal ~1M price/volume
+2. Industry chain leaders (suppliers / customers / competitors)
+3. Companies with recent or upcoming earnings reports
+
+Exclude: ST, delisting risk, illiquid small-caps.
+
+### 2.3 Peer Company Deep Dive
+
+For each peer (parallel via SubAgent if multiple):
+
+- ~1–2W price trend + ~1M fundamental changes
+- Key financials (revenue growth, gross margin, PE/PB, debt ratio — from latest earnings, max 3 items)
+- Product/market dynamics (market share, orders, policy impact)
+- Earnings status: already reported (beat/miss) / upcoming (date)
+- **Market**: A-share / HK / US + exchange
+
+### 2.4 Bidirectional Prediction (1–2 week window)
+
+| Direction | Logic |
+|-----------|-------|
+| **Peer → Target** | Peer's recent price moves, earnings beats/misses, sector sentiment → infer target follow/diverge/lag |
+| **Target → Peer** | Target catalyst → infer which peers may be affected; flag those with upcoming earnings |
+
+Each prediction must include:
+
+- **Direction**: Bullish / Bearish / Neutral
+- **Confidence**: High / Medium / Low (with 1-line rationale)
+- **Key catalyst**: specific event + timing
+- **Counter-argument**: at least 1 item
+- **Required peer fields**: ticker + market (A-share/HK/US) + earnings date
 
 ---
 
-## 参考文件
+## Step 3: Output Report
 
-- [output-template.md](output-template.md) — 报告模板与示例
-- [references/data-sources.md](references/data-sources.md) — 各市场公开信息源、搜索模板、区域可达性说明
-- [references/peer-selection.md](references/peer-selection.md) — 关联公司筛选规则
+Strictly follow [output-template.md](output-template.md). Report structure:
+
+1. **Executive Summary (top)** — recommendation, core logic, catalysts, risks
+2. **Prediction Summary** — target + peer predictions with market & earnings dates
+3. **Target Stock Snapshot** — price, valuation, recent events
+4. **Peer Deep Dive** — peer data + financial comparison table
+5. **Bidirectional Logic** — peer→target and target→peer analysis
+
+The report **must** end with this risk disclaimer (verbatim):
+
+> This report is compiled from publicly available information for research reference only and **does not constitute investment advice**. Stock markets involve significant risk. Short-term price movements are influenced by policies, capital flows, sentiment, and many other factors. Predictions carry substantial uncertainty. Please exercise independent judgment and make cautious decisions.
+
+---
+
+## Reference Files
+
+- [output-template.md](output-template.md) — report template with example
+- [references/data-sources.md](references/data-sources.md) — public data sources, search templates, regional accessibility
+- [references/peer-selection.md](references/peer-selection.md) — peer company selection rules

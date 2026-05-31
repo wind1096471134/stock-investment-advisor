@@ -1,102 +1,102 @@
-# 关联公司筛选规则
+# Peer Company Selection Rules
 
-从目标股票出发，选出 1～3 家强相关头部公司用于联动分析。
-
----
-
-## 筛选优先级
-
-按以下顺序选取，总数控制在 1～3 家：
-
-| 优先级 | 类型 | 条件 |
-|--------|------|------|
-| 1 | 同板块龙头 | 市值 Top3，且近 1 月涨跌幅或成交量偏离板块均值 |
-| 2 | 产业链关联 | 上游供应商 / 下游客户 / 直接竞品中的行业龙头 |
-| 3 | 财报催化 | 近期已发或 2 周内即将发财报的头部公司 |
-
-**加权规则**：同时满足多项者优先；财报日期在 2 周内者优先级 +1。
+From the target stock, select 1–3 strongly correlated peer companies for ripple analysis.
 
 ---
 
-## 头部公司判定
+## Selection Priority
 
-满足以下任一即为「头部」：
+Select in the following order, keeping total at 1–3:
 
-- 所属板块/行业市值排名前 3
-- 行业公认龙头（搜索「{行业} 龙头」前 3 结果一致指向）
-- 产业链中该环节最大参与者（如最大供应商、最大客户）
+| Priority | Type | Condition |
+|----------|------|-----------|
+| 1 | Same sector leader | Top-3 by market cap, with abnormal ~1M price/volume vs sector average |
+| 2 | Industry chain related | Upstream supplier / downstream customer / direct competitor — sector leader |
+| 3 | Earnings catalyst | Recently reported or reporting within 2 weeks — sector leader |
 
-**排除**：
-- ST / *ST 股票
-- 退市风险警示
-- 日均成交额极低（A 股 <5000 万、港股/美股类似流动性差）
-- 与目标股无实质业务关联的概念蹭热点股
+**Weighting**: Companies meeting multiple criteria rank higher. Companies with earnings within 2 weeks get +1 priority.
 
 ---
 
-## 关系类型定义
+## Defining "Leader"
 
-| 关系 | 说明 | 识别方法 |
-|------|------|----------|
-| 同板块 | 相同行业/概念板块 | 财报、行情软件板块分类 |
-| 上游 | 供应商、原材料、设备 | 搜索「{公司} 供应商」；年报前五大供应商 |
-| 下游 | 客户、渠道 | 搜索「{公司} 主要客户」；年报前五大客户 |
-| 竞品 | 直接竞争对手 | 搜索「{公司} 竞争对手」；同细分市场份额 |
+A company qualifies as a "leader" if it meets any of:
 
----
+- Top 3 by market cap in its sector/industry
+- Universally recognized leader (search `{sector} leading company` — top 3 results consistently point to the same name)
+- Largest participant in its industry chain node (e.g., largest supplier, largest customer)
 
-## 产业链识别流程
-
-1. WebSearch：`{公司名} 产业链 上下游`
-2. WebSearch：`{公司名} 主要供应商 客户`
-3. 从结果中提取 2～3 个高频出现的公司名
-4. 验证是否为上市公司（有股票代码）
-5. 按市值/行业地位筛选头部
+**Exclude**:
+- ST / *ST stocks (China)
+- Delisting risk
+- Illiquid (A-share avg daily turnover < ¥50M, HK/US similarly illiquid)
+- Concept stocks with no substantive business link to the target
 
 ---
 
-## 财报优先级
+## Relationship Types
 
-| 状态 | 权重 | 说明 |
-|------|------|------|
-| 2 周内即将发布 | 最高 | 短期催化剂，重点分析 |
-| 近 2 周内已发布 | 高 | 业绩 beat/miss 影响联动 |
-| 1 个月内已发布 | 中 | 市场可能已部分消化 |
-| 下次财报 >1 月后 | 低 | 短期影响有限 |
-
-**已发布财报关注点**：
-- 营收/利润 vs 预期（beat/miss）
-- 管理层指引变化
-- 毛利率/净利率趋势
-- 对产业链上下游的指引（如客户砍单、供应商涨价）
+| Type | Description | How to identify |
+|------|-------------|-----------------|
+| Same sector | Same industry/concept sector | Exchange sector classification, financial websites |
+| Upstream | Supplier, raw materials, equipment | Search `{company} main suppliers`; annual report top-5 suppliers |
+| Downstream | Customer, channel | Search `{company} main customers`; annual report top-5 customers |
+| Competitor | Direct competitor | Search `{company} competitors`; market share data |
 
 ---
 
-## 变动异常识别
+## Industry Chain Identification Flow
 
-近 1 月以下情况视为「变动大」，优先纳入关联分析：
+1. WebSearch: `{company name} supply chain industry chain`
+2. WebSearch: `{company name} main suppliers customers`
+3. Extract 2–3 frequently mentioned company names from results
+4. Verify they are publicly traded (have a ticker/code)
+5. Filter by market cap / industry position to select leaders
 
-- 涨跌幅超板块均值 2 倍（如板块 +5%，个股 +12% 或 -8%）
-- 单日成交量超近 20 日均量 2 倍
-- 重大公告（并购、定增、业绩预告、政策影响）
-- 分析师集中上调/下调评级
+---
 
-WebSearch 模板：
+## Earnings Priority
+
+| Status | Weight | Notes |
+|--------|--------|-------|
+| Upcoming within 2 weeks | Highest | Short-term catalyst, prioritize analysis |
+| Reported within past 2 weeks | High | Earnings beat/miss affects ripple |
+| Reported within past month | Medium | Market may have partly priced in |
+| Next earnings >1 month away | Low | Limited short-term impact |
+
+**Earnings analysis focus**:
+- Revenue/profit vs expectations (beat/miss)
+- Management guidance changes
+- Gross margin / net margin trends
+- Supply chain signals (e.g., customer order cuts, supplier price increases)
+
+---
+
+## Anomaly Detection
+
+The following qualify as "significant movement" — prioritize for peer analysis:
+
+- ~1M price change > 2× sector average (e.g., sector +5%, stock +12% or -8%)
+- Single-day volume > 2× 20-day average
+- Major announcement (M&A, capital raise, earnings pre-announcement, policy impact)
+- Concentrated analyst rating changes (upgrades/downgrades)
+
+WebSearch templates:
 ```
-{公司名} 股价 异常 近一个月
-{公司名} 重大公告 2026
-{公司名} 分析师 评级 变动
+{company name} stock price anomaly recent month
+{company name} major announcement 2026
+{company name} analyst rating change 2026
 ```
 
 ---
 
-## 最终确认清单
+## Final Checklist
 
-选定关联公司后，快速确认：
+After selecting peers, confirm:
 
-- [ ] 1～3 家，不超过 3 家
-- [ ] 均为上市公司，有明确代码
-- [ ] 与目标股有实质业务关联（非纯概念）
-- [ ] 至少 1 家有近期财报事件（已发或即将发）
-- [ ] 无 ST / 退市风险
-- [ ] 关系类型已标注（同板块/上游/下游/竞品）
+- [ ] 1–3 companies, no more than 3
+- [ ] All publicly traded — confirmed ticker/code
+- [ ] Substantive business link to target (not pure concept play)
+- [ ] At least 1 with a near-term earnings event (already reported or upcoming)
+- [ ] No ST / delisting risk
+- [ ] Relationship type marked (same sector / upstream / downstream / competitor)

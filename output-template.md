@@ -1,224 +1,224 @@
-# 报告输出模板
+# Report Output Template
 
-分析完成后，严格按以下结构输出。控制篇幅，避免重复叙述。
+After analysis, output strictly following the structure below. Keep concise — avoid repetition.
 
 ---
 
-## 模板
+## Template
 
 ```markdown
-## 📊 综合结论
+## 📊 Executive Summary
 
-### 操作建议：⭐⭐⭐ 偏多 / ⭐⭐ 中性观望 / ⭐ 偏空
+### Recommendation: ⭐⭐⭐ Bullish / ⭐⭐ Neutral / ⭐ Bearish
 
-> **一句话核心判断**：[1句话总结，包含财务数据支撑和关联公司对比]
+> **One-line core thesis**: [1 sentence summarizing financial data and peer comparison]
 
-| 维度 | 判断 | 依据 |
-|------|------|------|
-| **方向** | 偏多 / 偏空 / 观望 | [核心财务逻辑 + 同行参照] |
-| **置信度** | 高 / 中 / 低 | [1句说明] |
-| **关键催化剂** | [事件] | [时间节点] |
-| **主要风险** | [反面论据] | [至少1条] |
+| Dimension | Judgment | Rationale |
+|-----------|----------|-----------|
+| **Direction** | Bullish / Bearish / Neutral | [Core financial logic + peer reference] |
+| **Confidence** | High / Medium / Low | [1-line explanation] |
+| **Key Catalyst** | [Event] | [Timeline] |
+| **Primary Risk** | [Counter-argument] | [At least 1 item] |
 
-### 操作建议理由
+### Rationale
 
-- **基本面**：[目标公司关键财务指标（营收增速、PE、毛利率等）+ 与同行的对比]
-- **催化剂**：[财报/政策/产品发布等具体事件 + 日期]
-- **同行参照**：[关联公司近期表现如何印证/反证判断]
-- **估值**：[PE/PB等估值水平 vs 同行]
-- **风险**：[至少1个反面因素]
-
----
-
-## 🔮 预测汇总
-
-### 目标股预测
-
-| 股票 | 市场 | 方向 | 置信度 | 关键催化剂 | 财报日期 |
-|------|------|------|--------|-----------|---------|
-| [代码] | [A股/港股/美股] | 偏多/偏空/观望 | 高/中/低 | [事件] | [日期/已发布] |
-
-### 关联股联动预测
-
-| 股票 | 市场 | 关系 | 方向 | 催化剂 | 财报日期 | 置信度 |
-|------|------|------|------|--------|---------|--------|
-| [代码] | [A股/港股/美股] | 同板块/上游/下游/竞品 | 偏多/偏空/震荡 | [事件] | [日期] | 高/中/低 |
+- **Fundamentals**: [Target company key financials: revenue growth, PE, gross margin, etc. + comparison with peers]
+- **Catalyst**: [Earnings/policy/product launch etc. + date]
+- **Peer reference**: [How peer performance supports or contradicts the thesis]
+- **Valuation**: [PE/PB vs peers]
+- **Risk**: [At least 1 counter factor]
 
 ---
 
-## 📋 目标股票快照
+## 🔮 Prediction Summary
 
-| 项目 | 数据 |
+### Target Stock Prediction
+
+| Stock | Market | Direction | Confidence | Key Catalyst | Earnings Date |
+|-------|--------|-----------|------------|--------------|---------------|
+| [Ticker] | [A-share/HK/US] | Bullish/Bearish/Neutral | High/Med/Low | [Event] | [Date / Already out] |
+
+### Peer Ripple Prediction
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
+|-------|--------|-------------|-----------|----------|---------------|------------|
+| [Ticker] | [A-share/HK/US] | Same sector/Upstream/Downstream/Competitor | Bullish/Bearish/Neutral | [Event] | [Date] | High/Med/Low |
+
+---
+
+## 📋 Target Stock Snapshot
+
+| Item | Data |
 |------|------|
-| **代码** | [代码] |
-| **市场** | [A股/港股/美股] |
-| **最新收盘** | [价格]（[查询日期]） |
-| **近1周涨跌** | [约 ±X%] |
-| **近1月涨跌** | [约 ±X%] |
-| **市值** | [约XX亿] |
-| **市盈率 (TTM)** | [X倍] |
-| **所属板块** | [板块名] |
-| **近期要点** | [财报/产品/政策等最多3条] |
-| **下期财报** | [日期 / 已发布] |
+| **Ticker** | [code] |
+| **Market** | [A-share/HK/US] |
+| **Last Close** | [Price] ([query date]) |
+| **~1W Change** | [approx ±X%] |
+| **~1M Change** | [approx ±X%] |
+| **Market Cap** | [approx XXB] |
+| **PE (TTM)** | [X] |
+| **Sector** | [Sector name] |
+| **Recent Highlights** | [earnings/product/policy etc., max 3] |
+| **Next Earnings** | [Date / Already out] |
 
 ---
 
-## 🏢 关联公司深度分析
+## 🏢 Peer Deep Dive
 
-| 公司 | 代码 | 市场 | 关系 | 现价 | 近1周 | 近1月 | 核心变化 | 财报状态 |
-|------|------|------|------|------|-------|-------|---------|---------|
-| [名称] | [代码] | [市场] | [关系] | [$X] | [+X%] | [+X%] | [1句话] | [已发布/即将发布(日期)] |
-| [名称] | [代码] | [市场] | [关系] | [$X] | [+X%] | [+X%] | [1句话] | [已发布/即将发布(日期)] |
+| Company | Ticker | Market | Relationship | Price | ~1W | ~1M | Key Change | Earnings Status |
+|---------|--------|--------|-------------|-------|-----|-----|------------|----------------|
+| [Name] | [code] | [Market] | [Relation] | [$X] | [+X%] | [+X%] | [1 line] | [Already out / Upcoming(date)] |
+| [Name] | [code] | [Market] | [Relation] | [$X] | [+X%] | [+X%] | [1 line] | [Already out / Upcoming(date)] |
 
-### 关键财务对比
+### Key Financial Comparison
 
-| 指标 | [目标公司] | [关联1] | [关联2] | 行业均值 |
-|------|-----------|---------|---------|---------|
-| 营收增速 | [X%] | [X%] | [X%] | [X%] |
-| PE(TTM) | [X倍] | [X倍] | [X倍] | [X倍] |
-| 毛利率 | [X%] | [X%] | [X%] | [X%] |
+| Metric | [Target] | [Peer 1] | [Peer 2] | Industry Avg |
+|--------|----------|----------|----------|--------------|
+| Revenue Growth | [X%] | [X%] | [X%] | [X%] |
+| PE (TTM) | [X] | [X] | [X] | [X] |
+| Gross Margin | [X%] | [X%] | [X%] | [X%] |
 
-> 数据来源：最新公开财报，查询日期 [日期]
-
----
-
-## 🔄 双向预测逻辑
-
-### 关联公司 → 目标股
-
-| 来源 | 信号 | 影响方向 | 逻辑 |
-|------|------|---------|------|
-| [关联公司] | [近期涨跌/财报结果/行业动态] | 偏多/偏空 | [1句] |
-
-### 目标股 → 关联公司
-
-| 关联股 | 市场 | 财报日期 | 联动方向 | 逻辑 |
-|--------|------|---------|---------|------|
-| [关联公司] | [市场] | [日期] | 偏多/偏空 | [1句] |
+> Source: latest public earnings reports, queried on [date]
 
 ---
 
-## ⚠️ 风险提示
+## 🔄 Bidirectional Logic
 
-以上内容基于公开信息整理，仅为研究参考，**不构成投资建议**。股市有风险，短期走势受政策、资金、情绪等多因素影响，预测存在较大不确定性。请独立判断，谨慎决策。
+### Peer → Target
+
+| Source | Signal | Impact | Logic |
+|--------|--------|--------|-------|
+| [Peer] | [Recent price move / earnings result / industry news] | Bullish/Bearish | [1 line] |
+
+### Target → Peer
+
+| Peer | Market | Earnings Date | Direction | Logic |
+|------|--------|--------------|-----------|-------|
+| [Peer] | [Market] | [Date] | Bullish/Bearish | [1 line] |
+
+---
+
+## ⚠️ Risk Disclaimer
+
+This report is compiled from publicly available information for research reference only and **does not constitute investment advice**. Stock markets involve significant risk. Short-term price movements are influenced by policies, capital flows, sentiment, and many other factors. Predictions carry substantial uncertainty. Please exercise independent judgment and make cautious decisions.
 ```
 
 ---
 
-## 示例
+## Example
 
 ```markdown
-## 📊 综合结论
+## 📊 Executive Summary
 
-### 操作建议：⭐⭐⭐ 偏多
+### Recommendation: ⭐⭐⭐ Bullish
 
-> **宁德时代（300750）** 受益于下游需求强劲（比亚迪Q1营收+30%）和上游成本改善（锂价企稳），估值处于行业中位水平，短期有业绩支撑。
+> **CATL (300750)** benefits from strong downstream demand (BYD Q1 revenue +30%) and improving upstream costs (lithium prices stabilizing). Valuation is at industry median with earnings support.
 
-| 维度 | 判断 | 依据 |
-|------|------|------|
-| **方向** | 偏多 | 营收增速+18%，高于行业均值+12%；PE 22x vs 行业25x，估值合理 |
-| **置信度** | 中 | 汽车行业整体竞争加剧，毛利率若进一步下滑可能压制估值 |
-| **关键催化剂** | 储能订单增长 + 锂价企稳 | 储能板块Q2政策加码；6月锂盐价格有望继续反弹 |
-| **主要风险** | 亿纬锂能Q1毛利率下滑反映竞争加剧 | 若比亚迪6月销量不及预期，可能拖累板块 |
+| Dimension | Judgment | Rationale |
+|-----------|----------|-----------|
+| **Direction** | Bullish | Revenue growth +18% vs industry avg +12%; PE 22x vs industry 25x, reasonable |
+| **Confidence** | Medium | Auto sector competition intensifying; further gross margin decline could pressure valuation |
+| **Key Catalyst** | Energy storage orders + lithium price stabilization | Q2 policy tailwinds for storage; lithium price expected to rebound further in June |
+| **Primary Risk** | EV battery peers' gross margin decline reflects intensifying competition | If BYD June sales miss, may drag the sector |
 
-### 操作建议理由
+### Rationale
 
-- **基本面**：宁德时代Q1营收+18%，毛利率26.5%，净利润+22%，均处于行业头部。PE 22x低于行业均值25x。
-- **催化剂**：储能政策Q2密集出台，预计新增订单20%+。锂价企稳于8万/吨，成本端改善。
-- **同行参照**：比亚迪Q1超预期（营收+30%），下游需求强劲；亿纬锂能毛利率下滑（-2.1%）反映竞争在加剧，利好龙头集中。
-- **估值**：PE 22x vs 亿纬锂能PE 28x，估值相对有优势。
-- **风险**：若汽车终端销量低于预期，将拖累板块；储能订单转化节奏不确定。
-
----
-
-## 🔮 预测汇总
-
-### 目标股预测
-
-| 股票 | 市场 | 方向 | 置信度 | 关键催化剂 | 财报日期 |
-|------|------|------|--------|-----------|---------|
-| 300750 宁德时代 | A股 | 偏多 | 中 | 储能政策Q2加码；锂价企稳 | 已发布(Q1) |
-
-### 关联股联动预测
-
-| 股票 | 市场 | 关系 | 方向 | 催化剂 | 财报日期 | 置信度 |
-|------|------|------|------|--------|---------|--------|
-| 002594 比亚迪 | A股 | 下游客户 | 偏多 | 新能源汽车销量持续超预期 | 已发布(Q1 beat) | 中 |
-| 002460 赣锋锂业 | A股 | 上游 | 偏多 | 锂盐价格反弹 | 即将发布(6/5) | 中 |
-| 300014 亿纬锂能 | A股 | 竞品 | 偏空 | 毛利率继续承压 | 已发布(Q1 miss) | 中 |
+- **Fundamentals**: CATL Q1 revenue +18%, gross margin 26.5%, net profit +22% — all sector-leading. PE 22x below industry avg of 25x.
+- **Catalyst**: Q2 energy storage policy push, expected 20%+ new orders. Lithium stabilized at ~¥80K/ton, easing cost pressure.
+- **Peer reference**: BYD Q1 beat (revenue +30%), downstream demand strong; Yiwei Lithium gross margin -2.1% signals competition favoring the leader.
+- **Valuation**: PE 22x vs Yiwei's 28x — relative value advantage.
+- **Risk**: If auto sales miss expectations, the sector could be dragged down; storage order conversion pace uncertain.
 
 ---
 
-## 📋 目标股票快照
+## 🔮 Prediction Summary
 
-| 项目 | 数据 |
+### Target Stock Prediction
+
+| Stock | Market | Direction | Confidence | Key Catalyst | Earnings Date |
+|-------|--------|-----------|------------|--------------|---------------|
+| 300750 CATL | A-share | Bullish | Medium | Storage policy + lithium stabilization | Already out (Q1) |
+
+### Peer Ripple Prediction
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
+|-------|--------|-------------|-----------|----------|---------------|------------|
+| 002594 BYD | A-share | Downstream | Bullish | NEV sales continuing to beat | Already out (Q1 beat) | Medium |
+| 002460 Ganfeng Lithium | A-share | Upstream | Bullish | Lithium price rebound | Upcoming (Jun 5) | Medium |
+| 300014 Yiwei Lithium | A-share | Competitor | Bearish | Gross margin pressure continues | Already out (Q1 miss) | Medium |
+
+---
+
+## 📋 Target Stock Snapshot
+
+| Item | Data |
 |------|------|
-| **代码** | 300750 |
-| **市场** | A股（深交所） |
-| **最新收盘** | ¥185.20（5月30日） |
-| **近1周涨跌** | 约 +2.1% |
-| **近1月涨跌** | 约 -5.3% |
-| **市值** | 约 ¥8,100亿 |
-| **市盈率 (TTM)** | 22x |
-| **所属板块** | 电力设备 / 锂电池 |
-| **近期要点** | Q1营收+18%，毛利率26.5%；储能订单增长 |
-| **下期财报** | 已发布(Q1) |
+| **Ticker** | 300750 |
+| **Market** | A-share (Shenzhen) |
+| **Last Close** | ¥185.20 (May 30) |
+| **~1W Change** | ~ +2.1% |
+| **~1M Change** | ~ -5.3% |
+| **Market Cap** | ~ ¥810B |
+| **PE (TTM)** | 22x |
+| **Sector** | Electrical Equipment / Lithium Battery |
+| **Recent Highlights** | Q1 revenue +18%, gross margin 26.5%; energy storage order growth |
+| **Next Earnings** | Already out (Q1) |
 
 ---
 
-## 🏢 关联公司深度分析
+## 🏢 Peer Deep Dive
 
-| 公司 | 代码 | 市场 | 关系 | 现价 | 近1周 | 近1月 | 核心变化 | 财报状态 |
-|------|------|------|------|------|-------|-------|---------|---------|
-| 比亚迪 | 002594 | A股(深交所) | 下游客户 | ¥228.0 | +3.5% | +8.2% | Q1营收+30%，新能源车销量超预期 | 已发布(Q1 beat) |
-| 赣锋锂业 | 002460 | A股(深交所) | 上游供应商 | ¥38.5 | +1.2% | -2.0% | 锂盐价格近月反弹约5% | 即将发布(6/5) |
-| 亿纬锂能 | 300014 | A股(深交所) | 同板块竞品 | ¥52.3 | -0.8% | -6.1% | 毛利率下滑2.1个百分点 | 已发布(Q1 miss) |
+| Company | Ticker | Market | Relationship | Price | ~1W | ~1M | Key Change | Earnings Status |
+|---------|--------|--------|-------------|-------|-----|-----|------------|----------------|
+| BYD | 002594 | A-share (SZ) | Downstream | ¥228.0 | +3.5% | +8.2% | Q1 revenue +30%, NEV sales beat estimates | Already out (Q1 beat) |
+| Ganfeng Lithium | 002460 | A-share (SZ) | Upstream | ¥38.5 | +1.2% | -2.0% | Lithium price rebounded ~5% in past month | Upcoming (Jun 5) |
+| Yiwei Lithium | 300014 | A-share (SZ) | Competitor | ¥52.3 | -0.8% | -6.1% | Gross margin -2.1pp YoY | Already out (Q1 miss) |
 
-### 关键财务对比
+### Key Financial Comparison
 
-| 指标 | 宁德时代 | 比亚迪 | 赣锋锂业 | 亿纬锂能 | 行业均值 |
-|------|---------|-------|---------|---------|---------|
-| 营收增速 | +18% | +30% | -12% | +6% | +12% |
-| PE(TTM) | 22x | 25x | 35x | 28x | 25x |
-| 毛利率 | 26.5% | 20.2% | 15.8% | 16.3% | 18.5% |
+| Metric | CATL | BYD | Ganfeng | Yiwei | Industry Avg |
+|--------|------|-----|---------|-------|-------------|
+| Revenue Growth | +18% | +30% | -12% | +6% | +12% |
+| PE (TTM) | 22x | 25x | 35x | 28x | 25x |
+| Gross Margin | 26.5% | 20.2% | 15.8% | 16.3% | 18.5% |
 
-> 数据来源：最新公开财报，查询日期 5月30日
-
----
-
-## 🔄 双向预测逻辑
-
-### 关联公司 → 目标股
-
-| 来源 | 信号 | 影响方向 | 逻辑 |
-|------|------|---------|------|
-| 比亚迪 | Q1营收+30%，销量超预期 | 偏多 | 下游需求强劲，宁德时代作为主供商直接受益 |
-| 赣锋锂业 | 锂价企稳反弹约5% | 偏多 | 成本端压力缓解，毛利率有望回升 |
-| 亿纬锂能 | 毛利率下滑2.1% | 偏空（对宁德偏多） | 二线厂商承压，行业集中度向龙头倾斜 |
-
-### 目标股 → 关联公司
-
-| 关联股 | 市场 | 财报日期 | 联动方向 | 逻辑 |
-|--------|------|---------|---------|------|
-| 赣锋锂业 002460 | A股(深交所) | 即将发布(6/5) | 偏多 | 宁德电池出货增长拉动锂需求，赣锋Q2业绩有望边际改善 |
-| 比亚迪 002594 | A股(深交所) | 已发布(Q1) | 震荡 | 目标股无明显短期催化剂反向影响比亚迪 |
+> Source: latest public earnings filings, queried May 30
 
 ---
 
-## ⚠️ 风险提示
+## 🔄 Bidirectional Logic
 
-以上内容基于公开信息整理，仅为研究参考，**不构成投资建议**。股市有风险，短期走势受政策、资金、情绪等多因素影响，预测存在较大不确定性。请独立判断，谨慎决策。
+### Peer → Target
+
+| Source | Signal | Impact | Logic |
+|--------|--------|--------|-------|
+| BYD | Q1 revenue +30%, sales beat | Bullish | Strong downstream demand directly benefits CATL as primary supplier |
+| Ganfeng | Lithium price stabilizing + ~5% rebound | Bullish | Cost pressure easing, gross margin improvement expected |
+| Yiwei | Gross margin -2.1pp | CATL-Bullish | Tier-2 players struggling, concentration shifting to leader |
+
+### Target → Peer
+
+| Peer | Market | Earnings Date | Direction | Logic |
+|------|--------|--------------|-----------|-------|
+| 002460 Ganfeng Lithium | A-share (SZ) | Upcoming (Jun 5) | Bullish | CATL's battery shipment growth drives lithium demand, Ganfeng Q2 may see marginal improvement |
+| 002594 BYD | A-share (SZ) | Already out (Q1) | Neutral | No near-term catalyst from CATL directionally affecting BYD |
+
+---
+
+## ⚠️ Risk Disclaimer
+
+This report is compiled from publicly available information for research reference only and **does not constitute investment advice**. Stock markets involve significant risk. Short-term price movements are influenced by policies, capital flows, sentiment, and many other factors. Predictions carry substantial uncertainty. Please exercise independent judgment and make cautious decisions.
 ```
 
 ---
 
-## 格式规则
+## Format Rules
 
-1. **结论先行**：「综合结论」放在报告最顶部，用户第一时间看到操作建议
-2. **表格优先**：能用表格不用长段文字
-3. **预测依据 ≤3 条**：每条一句话
-4. **反面论据必写**：至少 1 条，写在「风险」/「主要风险」字段
-5. **数据标注来源时间**：价格注明查询日期
-6. **缺失数据**：表格填「未获取到」，不编造
-7. **关联公司必填字段**：代码 + 市场（A股/港股/美股）+ 财报状态
-8. **财务对比表**：目标公司与关联公司放在同一张表比较，至少包含营收增速、PE、毛利率
+1. **Conclusion first**: "Executive Summary" goes at the very top — user sees the recommendation immediately
+2. **Tables preferred**: use tables over paragraphs wherever possible
+3. **Max 3 supporting points** per prediction: one sentence each
+4. **Counter-argument required**: at least 1 item, in "Primary Risk" / "Risk" field
+5. **Timestamp data**: label prices with query date
+6. **Missing data**: fill table cells with "Not available" — never fabricate
+7. **Required peer fields**: ticker + market (A-share/HK/US) + earnings status
+8. **Financial comparison table**: target + peers in one table, at minimum revenue growth, PE, gross margin

@@ -5,7 +5,7 @@
 
 Analyze individual stocks, peer companies, and industry chains — generate 1–2 week directional outlooks based on publicly available information.
 
-**Language**: Chinese (Simplified) — the skill's output and analysis rules are tailored for Chinese-speaking retail investors analyzing A-shares, Hong Kong stocks, and US stocks.
+**Auto-detect language**: Type in Chinese → full Chinese output with Chinese data sources. Type in English → full English output with English data sources. No configuration needed.
 
 ---
 
@@ -27,7 +27,7 @@ Then invoke in Claude Code:
 /stock-investment-advisor
 ```
 
-Or trigger via keywords: `分析股票`, `投资建议`, 板块热点, 财报影响, etc.
+Or let the skill auto-trigger on stock-related queries: stock analysis, earnings, sector trends, investment research, etc. Supports both English and Chinese.
 
 ---
 
