@@ -31,6 +31,7 @@ After analysis, output strictly following the structure below. Keep concise — 
 - **Capital Flow**: [Recent ~1W net institutional/margin flow direction and magnitude]
 - **Policy**: [Recent 1–2 month policy/regulatory change affecting the target or its sector — tariffs, subsidies, antitrust, new laws, geopolitical events]
 - **Valuation**: [PE/PB vs peers; **valuation percentile vs historical range e.g. "PE at 5-year 15% percentile"**]
+- **财报传导**: [If target has upcoming earnings AND a peer already reported the same quarter → "同行[Peer]已发财报（[date]），业绩[beat/miss]，对目标即将发布的财报有重要参考价值". If no such transmission chain → "暂无强传导关联股".]
 - **Risk**: [At least 1 counter factor]
 
 ### Probability-Weighted Scenario Analysis
@@ -186,6 +187,7 @@ This report is compiled from publicly available information for research referen
 - **Policy**: China extended NEV purchase tax exemption through 2027; new energy storage subsidies effective Q2 favor large battery makers like CATL. EU battery carbon footprint rules create a barrier for smaller competitors.
 - **Peer reference**: BYD Q1 beat (revenue +30%), downstream demand strong; Yiwei Lithium gross margin -2.1% signals competition favoring the leader.
 - **Valuation**: PE 22x vs Yiwei's 28x — relative value advantage. PE at 5-year ~35% percentile — below historical median but not at extreme low.
+- **财报传导**: 同行 BYD（4/24 已发）、亿纬锂能（4/22 已发）均已发财报，CATL 即将发布 Q1（预计 4/30）。BYD 营收+30% beat + 亿纬毛利率承压 → CATL 大概率延续龙头集中趋势，营收利润双增可期。
 - **Risk**: If auto sales miss expectations, the sector could be dragged down; storage order conversion pace uncertain.
 
 ### Probability-Weighted Scenario Analysis
