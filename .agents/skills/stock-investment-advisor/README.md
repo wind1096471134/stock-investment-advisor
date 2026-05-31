@@ -12,16 +12,6 @@
 
 ### 🚀 Quick Install
 
-#### One-line install (from any platform)
-
-```bash
-# Via skills.sh (recommended — auto-discovers, cross-platform)
-npx skills add wind1096471134/stock-investment-advisor
-
-# Or via npm
-npx @bbhxwl/skills install stock-investment-advisor -t claude
-```
-
 #### Via Git (all platforms)
 
 ```bash
@@ -216,17 +206,7 @@ MIT — see [LICENSE](./LICENSE).
 
 ### 🚀 快速安装
 
-#### 一键安装（所有平台通用）
-
-```bash
-# 推荐方式（自动识别平台）
-npx skills add wind1096471134/stock-investment-advisor
-
-# 或通过 npm
-npx @bbhxwl/skills install stock-investment-advisor -t claude
-```
-
-#### Git 克隆
+#### Git 克隆（所有平台通用）
 
 ```bash
 git clone https://github.com/wind1096471134/stock-investment-advisor.git
