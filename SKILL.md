@@ -33,6 +33,11 @@ Deliver a 1–2 week directional outlook. No third-party API, no paid data sourc
 - At most 3 key financial figures per company
 - Forbidden: specific buy/sell price levels. Use **Bullish / Bearish / Neutral** instead of Buy / Sell
 - **Required peer fields**: every peer stock must include ticker, market (A-share / HK / US), and earnings status (already reported / upcoming + date)
+- **Earnings date must be precise**: label with exact date when found (e.g., "Jun 3, 2026"). If exact date not available via public search, mark as "未获取到具体日期" / "Exact date not found". Never fabricate or guess.
+- **财报传导标注**: in Associated Stock Predictions, mark each peer with ✅ (strong earnings transmission value) or ❌ (none). Criteria:
+  - ✅ if peer already reported earnings → provides reference for target's upcoming report
+  - ✅ if target has recent catalysts → provides signal for peer's upcoming report
+  - ❌ if no such earnings-centric linkage exists
 
 ---
 

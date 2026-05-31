@@ -45,10 +45,12 @@ After analysis, output strictly following the structure below. Keep concise — 
 
 ### Associated Stock Predictions
 
-| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
-|-------|--------|-------------|-----------|----------|----------|------------|
-| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
-| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
+**财报传导参考**：✅ 有强参考价值（已发财报→目标参考，或近期催化剂→待发股）；❌ 暂无强传导
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings | 财报传导 | Confidence |
+|-------|--------|-------------|-----------|----------|----------|---------|------------|
+| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date / 未获取到日期] | ✅/❌ [说明] | High/Med/Low |
+| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date / 未获取到日期] | ✅/❌ [说明] | High/Med/Low |
 
 ---
 
@@ -184,18 +186,20 @@ This report is compiled from publicly available information for research referen
 
 ### Associated Stock Predictions
 
+**财报传导参考**：✅ 有强参考价值（已发财报→目标参考，或近期催化剂→待发股）；❌ 暂无强传导
+
 **Tier 1 (Primary)** — Direct competitors / same-sector
 
-| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
-|-------|--------|-------------|-----------|----------|----------|------------|
-| 002594 BYD | A-share (SZ) | Competitor | Bullish | NEV sales momentum + Q1 beat | Already out (Q1) | Medium |
-| 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Already out (Q1) | Medium |
+| Stock | Market | Relationship | Direction | Catalyst | Earnings | 财报传导 | Confidence |
+|-------|--------|-------------|-----------|----------|----------|---------|------------|
+| 002594 BYD | A-share (SZ) | Competitor | Bullish | NEV sales momentum + Q1 beat | Apr 24, 2026 | ✅ BYD已发→CATL将发财报参考 | Medium |
+| 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Apr 22, 2026 | ✅ 竞争加剧→CATL利润率有保障 | Medium |
 
 **Tier 2 (Supplementary)** — Upstream / Investor *(only if strongly correlated)*
 
-| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
-|-------|--------|-------------|-----------|----------|----------|------------|
-| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5 | Medium |
+| Stock | Market | Relationship | Direction | Catalyst | Earnings | 财报传导 | Confidence |
+|-------|--------|-------------|-----------|----------|----------|---------|------------|
+| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5, 2026 | ❌ 上游涨价对CATL成本影响有限 | Medium |
 
 ---
 
@@ -294,7 +298,8 @@ This report is compiled from publicly available information for research referen
 3. **Max 3 supporting points** per prediction: one sentence each
 4. **Counter-argument required**: at least 1 item, in "Primary Risk" / "Risk" field
 5. **Timestamp data**: label prices with query date
-6. **Missing data**: fill table cells with "Not available" — never fabricate
+6. **Earnings dates must be precise**: use exact dates (e.g., "Jun 3, 2026"). If not found via public search, mark as "未获取到具体日期" / "Exact date not found". Never fabricate.
+7. **Missing data**: fill table cells with "Not available" — never fabricate
 7. **Required peer fields**: ticker + market (A-share/HK/US) + earnings status
 8. **Financial comparison table**: target + peers in one table, at minimum revenue growth, PE, gross margin
 9. **Two tiers**: Tier 1 (1-3 primary competitors) always required. Tier 2 (0-3 supplementary upstream/downstream/investor) **optional** — only include if strongly correlated.
