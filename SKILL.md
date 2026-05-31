@@ -182,7 +182,7 @@ Each prediction must include:
 
 Strictly follow [output-template.md](output-template.md). Report structure:
 
-1. **Executive Summary (top)** — recommendation, core logic, catalysts, risks
+1. **Executive Summary (top)** — recommendation, core logic, catalysts, risks, **associated stock predictions**
 2. **Prediction Summary** — target + peer predictions with market & earnings dates
 3. **Target Stock Snapshot** — price, valuation, recent events
 4. **Peer Deep Dive** — peer data + financial comparison table

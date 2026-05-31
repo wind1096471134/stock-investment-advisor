@@ -28,6 +28,13 @@ After analysis, output strictly following the structure below. Keep concise — 
 - **Valuation**: [PE/PB vs peers]
 - **Risk**: [At least 1 counter factor]
 
+### Associated Stock Predictions
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
+|-------|--------|-------------|-----------|----------|----------|------------|
+| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
+| [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
+
 ---
 
 ## 🔮 Prediction Summary
@@ -128,6 +135,14 @@ This report is compiled from publicly available information for research referen
 - **Peer reference**: BYD Q1 beat (revenue +30%), downstream demand strong; Yiwei Lithium gross margin -2.1% signals competition favoring the leader.
 - **Valuation**: PE 22x vs Yiwei's 28x — relative value advantage.
 - **Risk**: If auto sales miss expectations, the sector could be dragged down; storage order conversion pace uncertain.
+
+### Associated Stock Predictions
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
+|-------|--------|-------------|-----------|----------|----------|------------|
+| 002594 BYD | A-share (SZ) | Downstream | Bullish | NEV sales momentum + Q1 beat | Already out (Q1) | Medium |
+| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5 | Medium |
+| 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Already out (Q1) | Medium |
 
 ---
 
