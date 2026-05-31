@@ -6,7 +6,9 @@ Works with **Claude Code, Cursor, Codex, Gemini CLI, Windsurf, and any agent sys
 
 ---
 
-**English** · [中文版](#中文说明)
+<a name="english"></a>
+
+**English** · [中文版](#chinese)
 
 ---
 
@@ -218,6 +220,10 @@ MIT — see [LICENSE](./LICENSE).
 **Not financial advice.** This tool analyzes publicly available information for research reference only. Stock markets involve significant risk. Always make independent decisions and consult licensed professionals.
 
 ---
+<a name="chinese"></a>
+
+**[English](#english) · 中文版**
+
 # Stock Investment Advisor — 通用 Agent 技能
 
 > 基于公开网络搜索（WebSearch）分析 A 股 / 港股 / 美股上市公司，无需任何 API Key、Python 包或付费数据源。提供 1-2 周走势研判。
