@@ -9,7 +9,7 @@ Thumbs.db
 .agents/
 skills-lock.json
 
-# Editor files
+# OS files
 .vscode/
 .idea/
 *.swp

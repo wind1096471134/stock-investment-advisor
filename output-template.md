@@ -62,9 +62,17 @@ After analysis, output strictly following the structure below. Keep concise — 
 
 ### Peer Ripple Prediction
 
+**Tier 1 (Primary)** — Direct competitors / same-sector leaders
+
 | Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
 |-------|--------|-------------|-----------|----------|---------------|------------|
-| [Ticker] | [A-share/HK/US] | Same sector/Upstream/Downstream/Competitor/Investor/Investee | Bullish/Bearish/Neutral | [Event] | [Date] | High/Med/Low |
+| [Ticker] | [A-share/HK/US] | Same sector/Competitor | Bullish/Bearish/Neutral | [Event] | [Date] | High/Med/Low |
+
+**Tier 2 (Supplementary)** — Upstream / Downstream / Investor *(only if strongly correlated)*
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
+|-------|--------|-------------|-----------|----------|---------------|------------|
+| [Ticker] | [A-share/HK/US] | Upstream/Downstream/Investor/Investee | Bullish/Bearish/Neutral | [Event] | [Date] | High/Med/Low |
 
 ---
 
@@ -160,11 +168,18 @@ This report is compiled from publicly available information for research referen
 
 ### Associated Stock Predictions
 
+**Tier 1 (Primary)** — Direct competitors / same-sector
+
 | Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
 |-------|--------|-------------|-----------|----------|----------|------------|
-| 002594 BYD | A-share (SZ) | Downstream | Bullish | NEV sales momentum + Q1 beat | Already out (Q1) | Medium |
-| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5 | Medium |
+| 002594 BYD | A-share (SZ) | Competitor | Bullish | NEV sales momentum + Q1 beat | Already out (Q1) | Medium |
 | 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Already out (Q1) | Medium |
+
+**Tier 2 (Supplementary)** — Upstream / Investor *(only if strongly correlated)*
+
+| Stock | Market | Relationship | Direction | Catalyst | Earnings | Confidence |
+|-------|--------|-------------|-----------|----------|----------|------------|
+| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5 | Medium |
 
 ### Probability-Weighted Scenario Analysis
 
@@ -186,12 +201,17 @@ This report is compiled from publicly available information for research referen
 
 ### Peer Ripple Prediction
 
+**Tier 1 (Primary)** — Direct competitors / same-sector leaders
 | Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
 |-------|--------|-------------|-----------|----------|---------------|------------|
-| 002594 BYD | A-share | Downstream | Bullish | NEV sales continuing to beat | Already out (Q1 beat) | Medium |
-| 002460 Ganfeng Lithium | A-share | Upstream | Bullish | Lithium price rebound | Upcoming (Jun 5) | Medium |
+| 002594 BYD | A-share | Competitor | Bullish | NEV sales continuing to beat | Already out (Q1 beat) | Medium |
 | 300014 Yiwei Lithium | A-share | Competitor | Bearish | Gross margin pressure continues | Already out (Q1 miss) | Medium |
-| GOOGL Alphabet | US (NASDAQ) | **Investor** | Bullish | Investee's cloud momentum signals AI infra tailwinds | Already out (Q1 beat) | Low |
+
+**Tier 2 (Supplementary)** — Upstream / Downstream / Investor *(only if strongly correlated)*
+| Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
+|-------|--------|-------------|-----------|----------|---------------|------------|
+| 002460 Ganfeng Lithium | A-share | Upstream | Bullish | Lithium price rebound | Upcoming (Jun 5) | Medium |
+| GOOGL Alphabet | US (NASDAQ) | Investor | Bullish | Investee's cloud momentum signals AI infra tailwinds | Already out (Q1 beat) | Low |
 
 ---
 
@@ -269,6 +289,7 @@ This report is compiled from publicly available information for research referen
 6. **Missing data**: fill table cells with "Not available" — never fabricate
 7. **Required peer fields**: ticker + market (A-share/HK/US) + earnings status
 8. **Financial comparison table**: target + peers in one table, at minimum revenue growth, PE, gross margin
-9. **Don't limit to same sector**: investor/investee relationships can cross sectors — search for strategic shareholders and portfolio companies
+9. **Two tiers**: Tier 1 (1-3 primary competitors) always required. Tier 2 (0-3 supplementary upstream/downstream/investor) **optional** — only include if strongly correlated.
+10. **Don't limit to same sector**: investor/investee relationships can cross sectors — search for strategic shareholders and portfolio companies
 10. **Technical & capital flow required**: Executive Summary table must include "Technical" and "Capital Flow" dimension rows
 11. **Scenario analysis required**: include probability-weighted scenario table in Executive Summary (bullish/base/bearish scenarios with probabilities and triggers)

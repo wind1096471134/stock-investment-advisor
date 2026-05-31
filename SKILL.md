@@ -142,18 +142,22 @@ For each target stock (parallel via SubAgent if multiple):
 
 > Note: exact price/change figures may not be precise. Use approximate values labeled "~" with query date. Trend and relative value matter more than precision.
 
-### 2.2 Peer Company Selection (1–3 peers)
+### 2.2 Peer Company Selection (two tiers)
 
-Follow [references/peer-selection.md](references/peer-selection.md) rules:
+Follow [references/peer-selection.md](references/peer-selection.md) rules. Select peers in **two tiers:**
 
+**Tier 1 — Primary (1–3):** Direct competitors / same-sector leaders
 1. Top-3 by market cap in same sector **globally (across A-share/HK/US markets)**
-2. Industry chain leaders (suppliers / customers / competitors)
-3. **Strategic investors / investees** (shareholding relationships, even across different sectors)
-4. Companies with recent or upcoming earnings reports
+2. Companies with recent or upcoming earnings reports
+
+**Tier 2 — Supplementary (0–3, optional):** Strongly correlated upstream/downstream/investor peers
+3. Key upstream suppliers (critical component providers)
+4. Key downstream customers (major buyers driving target's orders)
+5. **Strategic investors / investees** (shareholding relationships, even across different sectors)
 
 > ⚠️ **Don't limit to the target's listing market.** If analyzing DELL (US), also check Lenovo (HK). If analyzing 腾讯 (HK), also check Meta (US). Use market-agnostic searches like "PC market share ranking" — not "US PC stocks".
 >
-> ⚠️ **Don't limit to same sector.** Strategic investors and major shareholders can be in completely different industries (e.g., a tech giant investing in a space company). Always search for investment relationships explicitly.
+> ⚠️ **Don't include weak correlations.** Tier 2 is optional — only include if the link is strong and measurable. If no strong supplementary link exists, keep it at Tier 1 only.
 
 Exclude: ST, delisting risk, illiquid small-caps.
 

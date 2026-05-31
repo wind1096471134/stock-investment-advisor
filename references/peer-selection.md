@@ -1,25 +1,44 @@
 # Peer Company Selection Rules
 
-From the target stock, select 1–3 strongly correlated peer companies for ripple analysis.
+From the target stock, select peers for ripple analysis. **Two tiers:**
+
+- **Tier 1 (Primary, 1–3):** Direct competitors / same-sector leaders — the most directly comparable companies.
+- **Tier 2 (Supplementary, 0–3):** Strongly correlated upstream suppliers, downstream customers, or strategic investors/investees from a **different subsector**. Only include if they have a substantive and measurable link to the target's near-term outlook.
+
+> **Total: 1–6 companies.** If no strong supplementary link exists, don't force it.
 
 ---
 
-## Selection Priority
+## Selection Priority (Tier 1 — Primary)
 
-Select in the following order, keeping total at 1–3:
+Select **1–3** in the following order:
 
 | Priority | Type | Condition |
 |----------|------|-----------|
 | 1 | Same sector leader | Top-3 by market cap **across all markets (A-share/HK/US)**, with abnormal ~1M price/volume vs sector average |
-| 2 | Industry chain related | Upstream supplier / downstream customer / direct competitor — sector leader |
-| 3 | **Strategic investment / cross-ownership** | **Major shareholder (≥5%) or invested company — public company** |
-| 4 | Earnings catalyst | Recently reported or reporting within 2 weeks — sector leader |
+| 2 | Direct competitor | Same subsector, comparable scale, recent catalyst |
+| 3 | Earnings catalyst | Recently reported or reporting within 2 weeks — sector leader |
 
 **Weighting**: Companies meeting multiple criteria rank higher. Companies with earnings within 2 weeks get +1 priority.
 
 > ⚠️ **Priority 1 note**: "Same sector" means **across all markets**. For example, if analyzing DELL (US), competitors include Lenovo (HK) and HPE (US). Don't limit searches to the target's listing market.
+
+## Selection Priority (Tier 2 — Supplementary)
+
+**Only if a strong and measurable link exists.** Select **0–3**:
+
+| Priority | Type | Condition |
+|----------|------|-----------|
+| 4 | Key upstream supplier | Critical component provider whose pricing/volume materially affects target's margins |
+| 5 | Key downstream customer | Major buyer whose capex/spending directly drives target's orders |
+| 6 | **Strategic investor / cross-ownership** | **Major shareholder (≥5%) or invested company — public company** |
+
+> ⚠️ **Priority 6 note**: Investment relationships often cut across sectors (e.g., a tech giant investing in a space company). These are easy to miss if you only search within the same sector. **Always search for strategic investors / major shareholders during peer identification.**
 >
-> ⚠️ **Priority 3 note**: Investment relationships often cut across sectors (e.g., a tech giant investing in a space company). These are easy to miss if you only search within the same sector. **Always search for strategic investors / major shareholders during peer identification.**
+> ⚠️ **Tier 2 filter**: Only include a Tier 2 company if:
+> - It is in the **top 3** of its category (supplier/customer/investor) by revenue or ownership %, AND
+> - Its recent stock price moves, earnings, or business updates have a **clear and direct** impact on the target.
+> - If the link is weak or indirect → don't include.
 
 ---
 
@@ -132,7 +151,9 @@ WebSearch templates:
 
 After selecting peers, confirm:
 
-- [ ] 1–3 companies, no more than 3
+- [ ] **Tier 1**: 1–3 primary competitors/direct peers
+- [ ] **Tier 2** (optional): 0–3 supplementary upstream/downstream/investor peers **only if strongly correlated**
+- [ ] Total ≤ 6
 - [ ] All publicly traded — confirmed ticker/code
 - [ ] **At least 1 peer from a different market than the target** (if a global leader exists elsewhere)
 - [ ] Substantive business link to target (not pure concept play)
@@ -143,3 +164,4 @@ After selecting peers, confirm:
 - [ ] **Cross-market search done** — searched `{industry} global top companies ranking` not just `{market} {sector} stocks`
 - [ ] **⚠️ Business segment decomposed** — searched `{peer} revenue breakdown by segment` for each peer; confirmed whether the overlapping segment is the peer's real profit driver
 - [ ] **Multi-relationship flagged** — if peer has multiple relationships with target (e.g., competitor + supplier), all are noted
+- [ ] **Tier 2 filter applied** — no weak/indirect links included just to fill space
