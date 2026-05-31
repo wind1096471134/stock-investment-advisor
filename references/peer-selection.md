@@ -10,13 +10,15 @@ Select in the following order, keeping total at 1–3:
 
 | Priority | Type | Condition |
 |----------|------|-----------|
-| 1 | Same sector leader | Top-3 by market cap, with abnormal ~1M price/volume vs sector average |
+| 1 | Same sector leader | Top-3 by market cap **across all markets (A-share/HK/US)**, with abnormal ~1M price/volume vs sector average |
 | 2 | Industry chain related | Upstream supplier / downstream customer / direct competitor — sector leader |
 | 3 | **Strategic investment / cross-ownership** | **Major shareholder (≥5%) or invested company — public company** |
 | 4 | Earnings catalyst | Recently reported or reporting within 2 weeks — sector leader |
 
 **Weighting**: Companies meeting multiple criteria rank higher. Companies with earnings within 2 weeks get +1 priority.
 
+> ⚠️ **Priority 1 note**: "Same sector" means **across all markets**. For example, if analyzing DELL (US), competitors include Lenovo (HK) and HPE (US). Don't limit searches to the target's listing market.
+>
 > ⚠️ **Priority 3 note**: Investment relationships often cut across sectors (e.g., a tech giant investing in a space company). These are easy to miss if you only search within the same sector. **Always search for strategic investors / major shareholders during peer identification.**
 
 ---
@@ -25,9 +27,11 @@ Select in the following order, keeping total at 1–3:
 
 A company qualifies as a "leader" if it meets any of:
 
-- Top 3 by market cap in its sector/industry
-- Universally recognized leader (search `{sector} leading company` — top 3 results consistently point to the same name)
+- Top 3 by market cap in its **global** sector/industry (across A-share / HK / US markets)
+- Universally recognized leader (search `{sector} leading company` or `{sector} 龙头` — top 3 results consistently point to the same name)
 - Largest participant in its industry chain node (e.g., largest supplier, largest customer)
+
+> 🌐 **Cross-market**: Leaders can be in different markets. Use market-agnostic searches (e.g., "PC manufacturers market share ranking" instead of "US PC stocks") to find peers listed elsewhere.
 
 **Exclude**:
 - ST / *ST stocks (China)
@@ -52,13 +56,14 @@ A company qualifies as a "leader" if it meets any of:
 
 ## Industry Chain & Investment Identification Flow
 
-1. WebSearch: `{company name} supply chain industry chain`
-2. WebSearch: `{company name} main suppliers customers`
-3. **WebSearch: `{company name} major shareholders strategic investors`** — find who owns or has invested in the company
-4. **WebSearch: `{company name} strategic investments portfolio subsidiaries`** — find who the company has invested in
-5. Extract 2–3 frequently mentioned company names from results
-6. Verify they are publicly traded (have a ticker/code)
-7. Filter by market cap / industry position to select leaders
+1. WebSearch: `{company name} industry chain main competitors` (market-agnostic — don't add market qualifier)
+2. WebSearch: `{sector/industry} top companies global market share ranking` — find global leaders across all markets
+3. WebSearch: `{company name} main suppliers customers`
+4. **WebSearch: `{company name} major shareholders strategic investors`** — find who owns or has invested in the company
+5. **WebSearch: `{company name} strategic investments portfolio subsidiaries`** — find who the company has invested in
+6. Extract 2–3 frequently mentioned company names from results
+7. Verify they are publicly traded (have a ticker/code) — **note their listing market**
+8. Filter by market cap / industry position to select leaders, **preferring a mix of markets when equally matched**
 
 ---
 
@@ -104,8 +109,10 @@ After selecting peers, confirm:
 
 - [ ] 1–3 companies, no more than 3
 - [ ] All publicly traded — confirmed ticker/code
+- [ ] **At least 1 peer from a different market than the target** (if a global leader exists elsewhere)
 - [ ] Substantive business link to target (not pure concept play)
 - [ ] At least 1 with a near-term earnings event (already reported or upcoming)
 - [ ] No ST / delisting risk
 - [ ] Relationship type marked (same sector / upstream / downstream / competitor / **investor / investee**)
 - [ ] **Investment relationships searched** — did not limit to same-sector peers only
+- [ ] **Cross-market search done** — searched `{industry} global top companies ranking` not just `{market} {sector} stocks`

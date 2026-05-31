@@ -208,20 +208,33 @@ Chinese (alternative):
 
 ## General-purpose Searches
 
-### Industry chain
+### Industry chain & cross-market peers
+
+> 🌐 **Cross-market key**: For global industries (PCs, servers, phones, autos, chips), the top competitor may list in a different market. **Don't add market qualifiers** to these searches.
 
 Chinese:
 ```
 {公司名} 上游 供应商 龙头
 {公司名} 下游 客户 主要
 {公司名} 竞争对手 行业龙头
+{行业} 全球龙头企业 排名 {年份}
 ```
 
 English:
 ```
 {company name} supply chain major partners
 {company name} main suppliers customers
-{company name} vs competitors market share
+{company name} top competitors global
+{industry/sector} global market share ranking top companies 2026
+{industry} leading companies worldwide list {year}
+```
+
+Examples:
+```
+PC manufacturers global market share ranking 2026
+AI server vendors market share worldwide 2026
+smartphone makers global ranking 2026
+cloud infrastructure providers market share 2026
 ```
 
 ### Policy & regulatory changes
@@ -350,6 +363,7 @@ trending stocks last month {market}
 5. **No login required**: only use publicly accessible pages.
 6. **Honest reporting**: mark unobtainable data as "Not available." Never fabricate or fall back to any third-party API.
 7. **Search beyond same sector**: always search for strategic investors / major shareholders / portfolio companies — these relationships often cross industry boundaries and are easy to miss.
-8. **Include technical & capital flow signals**: for short-term (1–2 week) outlooks, technical indicators (support/resistance, MA, RSI) and capital flow data (institutional flow, north-bound flow) are often more useful than fundamentals.
-9. **Check valuation percentile**: absolute PE is less informative than PE relative to historical range — search for "PE at 5-year XX% percentile" to gauge valuation context.
-10. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.
+8. **Search beyond same market**: for global industries, the top competitor may list in a different market. Use market-agnostic queries like `{industry} global market share leaders` instead of `{market} {industry} stocks`.
+9. **Include technical & capital flow signals**: for short-term (1–2 week) outlooks, technical indicators (support/resistance, MA, RSI) and capital flow data (institutional flow, north-bound flow) are often more useful than fundamentals.
+10. **Check valuation percentile**: absolute PE is less informative than PE relative to historical range — search for "PE at 5-year XX% percentile" to gauge valuation context.
+11. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.
