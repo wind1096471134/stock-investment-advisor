@@ -260,6 +260,55 @@ English:
 {company name} equity ownership structure
 ```
 
+### Technical analysis
+
+> 🔑 **Key for short-term (1–2 week) outlook**: technical signals often matter more than fundamentals for this timeframe.
+
+Chinese:
+```
+{代码} 技术分析 支撑位 压力位 均线
+{代码} RSI MACD KDJ
+{代码} 52周最高最低
+```
+
+English:
+```
+{ticker} technical analysis support resistance moving average
+{ticker} RSI MACD 2026
+{ticker} 52 week high low
+```
+
+### Capital flow / institutional flow
+
+Chinese:
+```
+{代码} 主力资金 净流入 近一周
+{代码} 北向资金 持仓 变动
+{代码} 融资融券 余额 变化
+```
+
+English:
+```
+{ticker} institutional ownership change 13F
+{ticker} short interest ratio latest
+{stock} insider buying selling recent
+```
+
+### Valuation percentile
+
+Chinese:
+```
+{代码} 市盈率 历史分位 近五年
+{代码} PE PB 估值百分位
+```
+
+English:
+```
+{ticker} PE percentile 5 year range
+{ticker} valuation historical percentile
+{stock} current valuation vs historical average
+```
+
 ### Earnings calendar
 
 Chinese:
@@ -301,4 +350,6 @@ trending stocks last month {market}
 5. **No login required**: only use publicly accessible pages.
 6. **Honest reporting**: mark unobtainable data as "Not available." Never fabricate or fall back to any third-party API.
 7. **Search beyond same sector**: always search for strategic investors / major shareholders / portfolio companies — these relationships often cross industry boundaries and are easy to miss.
-8. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.
+8. **Include technical & capital flow signals**: for short-term (1–2 week) outlooks, technical indicators (support/resistance, MA, RSI) and capital flow data (institutional flow, north-bound flow) are often more useful than fundamentals.
+9. **Check valuation percentile**: absolute PE is less informative than PE relative to historical range — search for "PE at 5-year XX% percentile" to gauge valuation context.
+10. **Precision**: use approximate values ("~+2%", "~down 5 points") and label with the query date. Trend and relative value matter more than exact figures.

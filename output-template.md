@@ -18,6 +18,8 @@ After analysis, output strictly following the structure below. Keep concise — 
 | **Direction** | Bullish / Bearish / Neutral | [Core financial logic + peer reference] |
 | **Confidence** | High / Medium / Low | [1-line explanation] |
 | **Key Catalyst** | [Event] | [Timeline] |
+| **Technical** | Bullish / Bearish / Neutral | [Key support/resistance levels, MA trend, RSI] |
+| **Capital Flow** | Bullish / Bearish / Neutral | [Recent ~1W net institutional/margin flow, north-bound flow if A-share] |
 | **Policy** | Bullish / Bearish / Neutral | [Recent 1–2 month policy/regulatory change and its impact] |
 | **Primary Risk** | [Counter-argument] | [At least 1 item] |
 
@@ -25,9 +27,10 @@ After analysis, output strictly following the structure below. Keep concise — 
 
 - **Fundamentals**: [Target company key financials: revenue growth, PE, gross margin, etc. + comparison with peers]
 - **Catalyst**: [Earnings/policy/product launch etc. + date]
+- **Technical**: [Key support/resistance levels, MA trend, RSI or other relevant indicators]
+- **Capital Flow**: [Recent ~1W net institutional/margin flow direction and magnitude]
 - **Policy**: [Recent 1–2 month policy/regulatory change affecting the target or its sector — tariffs, subsidies, antitrust, new laws, geopolitical events]
-- **Peer reference**: [How peer performance supports or contradicts the thesis]
-- **Valuation**: [PE/PB vs peers]
+- **Valuation**: [PE/PB vs peers; **valuation percentile vs historical range e.g. "PE at 5-year 15% percentile"**]
 - **Risk**: [At least 1 counter factor]
 
 ### Associated Stock Predictions
@@ -36,6 +39,16 @@ After analysis, output strictly following the structure below. Keep concise — 
 |-------|--------|-------------|-----------|----------|----------|------------|
 | [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
 | [Ticker] | [Market] | [Investor/Competitor/etc.] | Bullish/Bearish | [Key event] | [Date] | High/Med/Low |
+
+### Probability-Weighted Scenario Analysis
+
+| Scenario | Probability | Expected Range | Trigger | Rationale |
+|----------|-------------|---------------|---------|-----------|
+| **Bullish** | ~X% | +Y% to +Z% | [Key catalysts that must materialize] | [1-2 sentences] |
+| **Base** | ~X% | -Y% to +Y% | [Most likely path] | [1-2 sentences] |
+| **Bearish** | ~X% | -Y% to -Z% | [Key risk events that would trigger this] | [1-2 sentences] |
+
+> **Expected value**: [Weighted average direction] → [Final recommendation]
 
 ---
 
@@ -65,8 +78,9 @@ After analysis, output strictly following the structure below. Keep concise — 
 | **~1W Change** | [approx ±X%] |
 | **~1M Change** | [approx ±X%] |
 | **Market Cap** | [approx XXB] |
-| **PE (TTM)** | [X] |
+| **PE (TTM)** | [X] / [5-year X% percentile] |
 | **Sector** | [Sector name] |
+| **Key Support / Resistance** | [S X.XX / R X.XX] |
 | **Recent Highlights** | [earnings/product/policy etc., max 3] |
 | **Next Earnings** | [Date / Already out] |
 
@@ -128,6 +142,8 @@ This report is compiled from publicly available information for research referen
 | **Direction** | Bullish | Revenue growth +18% vs industry avg +12%; PE 22x vs industry 25x, reasonable |
 | **Confidence** | Medium | Auto sector competition intensifying; further gross margin decline could pressure valuation |
 | **Key Catalyst** | Energy storage orders + lithium price stabilization | Q2 policy tailwinds for storage; lithium price expected to rebound further in June |
+| **Technical** | Neutral | Stock below 20-day MA (188) but holding above 50-day (178); RSI 45, not oversold |
+| **Capital Flow** | Neutral | North-bound net outflow ~¥1.2B this week; institutional active but mixed |
 | **Policy** | Bullish | China's Q2 2026 energy storage subsidy policy + battery recycling mandates favor tier-1 battery makers; NEV purchase tax exemption extended through 2027 |
 | **Primary Risk** | EV battery peers' gross margin decline reflects intensifying competition | If BYD June sales miss, may drag the sector |
 
@@ -135,9 +151,11 @@ This report is compiled from publicly available information for research referen
 
 - **Fundamentals**: CATL Q1 revenue +18%, gross margin 26.5%, net profit +22% — all sector-leading. PE 22x below industry avg of 25x.
 - **Catalyst**: Q2 energy storage policy push, expected 20%+ new orders. Lithium stabilized at ~¥80K/ton, easing cost pressure.
+- **Technical**: Below 20-day MA (¥188) but holding above 50-day MA (¥178). RSI 45 — not oversold, but nearing buying zone.
+- **Capital Flow**: North-bound capital net outflow ~¥1.2B this week; institutional positioning mixed but active.
 - **Policy**: China extended NEV purchase tax exemption through 2027; new energy storage subsidies effective Q2 favor large battery makers like CATL. EU battery carbon footprint rules create a barrier for smaller competitors.
 - **Peer reference**: BYD Q1 beat (revenue +30%), downstream demand strong; Yiwei Lithium gross margin -2.1% signals competition favoring the leader.
-- **Valuation**: PE 22x vs Yiwei's 28x — relative value advantage.
+- **Valuation**: PE 22x vs Yiwei's 28x — relative value advantage. PE at 5-year ~35% percentile — below historical median but not at extreme low.
 - **Risk**: If auto sales miss expectations, the sector could be dragged down; storage order conversion pace uncertain.
 
 ### Associated Stock Predictions
@@ -147,6 +165,14 @@ This report is compiled from publicly available information for research referen
 | 002594 BYD | A-share (SZ) | Downstream | Bullish | NEV sales momentum + Q1 beat | Already out (Q1) | Medium |
 | 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5 | Medium |
 | 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Already out (Q1) | Medium |
+
+### Probability-Weighted Scenario Analysis
+
+| Scenario | Probability | Expected Range | Trigger | Rationale |
+|----------|-------------|---------------|---------|-----------|
+| **Bullish** | ~30% | +5% to +12% | Q2 storage orders beat; BYD June sales strong; lithium further rallies | Strong macro support + policy tailwinds |
+| **Base** | ~50% | -3% to +3% | Gradual storage order conversion; stable lithium; moderate auto sales | Most balanced path, current valuation fair |
+| **Bearish** | ~20% | -5% to -15% | Auto sales miss; storage order delays; competition margin squeeze | Risk factors already flagged in peers 
 
 ---
 
@@ -244,3 +270,5 @@ This report is compiled from publicly available information for research referen
 7. **Required peer fields**: ticker + market (A-share/HK/US) + earnings status
 8. **Financial comparison table**: target + peers in one table, at minimum revenue growth, PE, gross margin
 9. **Don't limit to same sector**: investor/investee relationships can cross sectors — search for strategic shareholders and portfolio companies
+10. **Technical & capital flow required**: Executive Summary table must include "Technical" and "Capital Flow" dimension rows
+11. **Scenario analysis required**: include probability-weighted scenario table in Executive Summary (bullish/base/bearish scenarios with probabilities and triggers)

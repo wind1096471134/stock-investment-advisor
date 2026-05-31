@@ -131,10 +131,13 @@ For each target stock (parallel via SubAgent if multiple):
 
 - **Price data**: current price, ~1W / ~1M change (search stock price pages)
 - **Basic info**: sector, market cap range
+- **Technical signals**: key support/resistance levels, MA trend (20-day / 50-day / 200-day), RSI or other momentum indicators, 52-week high/low proximity
+- **Capital flow / money flow**: recent ~1W institutional flow, north-bound/south-bound flow (for A-shares/HK), margin trading activity, large order flow direction
 - **Major events**: past month earnings, products, litigation, etc.
 - **Policy / regulatory changes**: past 1–2 months industry-specific policies, tariffs, subsidies, antitrust actions, or geopolitical events affecting the sector
 - **Earnings calendar**: upcoming earnings date (if any)
 - **Key financials**: revenue growth, PE, gross margin (for peer comparison, max 3 items)
+- **Valuation percentile**: PE / PB compared to historical range (e.g., "PE at 5-year XX% percentile")
 - **Strategic relationships**: major shareholders, strategic investors, and portfolio companies (cross-sector relationships are easy to miss — search explicitly)
 
 > Note: exact price/change figures may not be precise. Use approximate values labeled "~" with query date. Trend and relative value matter more than precision.
