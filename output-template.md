@@ -17,7 +17,7 @@ After analysis, output strictly following the structure below. Keep concise — 
 |-----------|----------|-----------|
 | **Direction** | Bullish / Bearish / Neutral | [Core financial logic + peer reference] |
 | **Confidence** | High / Medium / Low | [1-line explanation] |
-| **Key Catalyst** | [Event] | [Timeline] |
+| **Key Catalyst** | [最近 1-2 周事件名称 + 日期] | [事件概要 + 预期影响方向] |
 | **Technical** | Bullish / Bearish / Neutral | [Key support/resistance levels, MA trend, RSI] |
 | **Capital Flow** | Bullish / Bearish / Neutral | [Recent ~1W net institutional/margin flow, north-bound flow if A-share] |
 | **Policy** | Bullish / Bearish / Neutral | [Recent 1–2 month policy/regulatory change and its impact] |
@@ -26,7 +26,7 @@ After analysis, output strictly following the structure below. Keep concise — 
 ### Rationale
 
 - **Fundamentals**: [Target company key financials: revenue growth, PE, gross margin, etc. + comparison with peers]
-- **Catalyst**: [Earnings/policy/product launch etc. + date]
+- **近期事件**: [最近 1-2 周强相关事件列表，每项含日期 + 事件名称 + 影响方向（利多/利空）。示例："6/1 GTC Taipei 发布 RTX Spark PC 芯片——利多；5/28 美国对华芯片新出口限制——利空"]
 - **Technical**: [Key support/resistance levels, MA trend, RSI or other relevant indicators]
 - **Capital Flow**: [Recent ~1W net institutional/margin flow direction and magnitude]
 - **Policy**: [Recent 1–2 month policy/regulatory change affecting the target or its sector — tariffs, subsidies, antitrust, new laws, geopolitical events]

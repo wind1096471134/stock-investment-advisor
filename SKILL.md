@@ -26,14 +26,23 @@ Deliver a 1–2 week directional outlook. No third-party API, no paid data sourc
 
 - Guidance: short phrases + numbered options, at most 2 questions per turn
 - Analysis: **conclusion first** (executive summary → predictions → detailed analysis), no repetition
-- Language detection:
-  - User writes in Chinese → full Chinese workflow (Chinese search queries + Chinese output)
-  - User writes in English → full English workflow (English search queries + English output)
+- **语言锁定规则**：
+  1. **确定语言**：综合判断用户输入的语言 + 之前对话上下文的语言，确定最终输出语言
+  2. **严格对齐**：语言一旦确定，整份报告必须严格使用同一种语言输出（仅允许保留英文专有名词如 ticker、Bullish/Bearish/Neutral、技术术语等）
+  3. **禁止混用**：不得在同一报告内混用中英文（例如：英文报告中出现「财报传导」、中文报告中出现 "Executive Summary"）。与语言不匹配的章节标题、标注文字、表格描述都必须替换为对应语言
+  4. **例外**：英文 ticker 代码（如 AAPL）、市场标注（A-share/HK/US）以及定向术语（Bullish/Bearish/Neutral）可保留原语言不变
+- Language lock rule:
+  1. **Determine language**: evaluate both the user's input language and the prior conversation language to lock the output language
+  2. **Strict alignment**: once locked, the entire report must use that language consistently (only exceptions are English proper nouns like tickers, Bullish/Bearish/Neutral, technical terms)
+  3. **No mixing**: do NOT mix languages within a single report (e.g., Chinese terms like "财报传导" in an English report, or "Executive Summary" in a Chinese report). Section headers, annotations, and table descriptions must all match the chosen language
+  4. **Exceptions**: stock tickers (e.g. AAPL), market labels (A-share/HK/US), and directional terms (Bullish/Bearish/Neutral) may stay in their original form
 - Data gaps: mark as "Not available" / 「未获取到」, never fabricate
 - At most 3 key financial figures per company
 - Forbidden: specific buy/sell price levels. Use **Bullish / Bearish / Neutral** instead of Buy / Sell
 - **Required peer fields**: every peer stock must include ticker, market (A-share / HK / US), and earnings status (already reported / upcoming + date)
 - **Earnings date must be precise**: label with exact date when found (e.g., "Jun 3, 2026"). If exact date not available via public search, mark as "未获取到具体日期" / "Exact date not found". Never fabricate or guess.
+- **近期催化剂必须纳入预测**：预测必须搜索并列出最近 1-2 周与该股**强相关**的事件、政策、公告、行业大会、产品发布等，并列明每个事件的具体日期、内容概要及预期影响方向。示例："ASUS GTC Taipei 大会（6/1）发布 RTX Spark PC 芯片——扩展 PC 新市场，利好" / "美国商务部 5/28 对华 AI 芯片新出口限制——限制 Blackwell 销往中国实体，利空"
+- **非财报期优先依赖近期催化剂**：在非财报密集期（即目标及同行均无近期财报），近期 1-2 周的事件/政策/公告应取代财报传导成为预测的核心依据，占预测信心的主导权重
 - **财报传导标注**: in Associated Stock Predictions, mark each peer based on **chronological relationship** between target and peer earnings dates:
 
 | 时序 | 传导方向 | 标注 |
@@ -142,6 +151,7 @@ For each target stock (parallel via SubAgent if multiple):
 - **Technical signals**: key support/resistance levels, MA trend (20-day / 50-day / 200-day), RSI or other momentum indicators, 52-week high/low proximity
 - **Capital flow / money flow**: recent ~1W institutional flow, north-bound/south-bound flow (for A-shares/HK), margin trading activity, large order flow direction
 - **Major events**: past month earnings, products, litigation, etc.
+- **近期核心催化剂（1-2 周）**：识别最近 1-2 周与该股强关联的事件/政策/公告/行业会议/产品发布/重大订单/管理层变动等。搜索 `{stock} {最近事件关键词}`。列表形式呈现，每项标注：日期 + 事件概要 + 预计影响方向（利多/利空）
 - **Policy / regulatory changes**: past 1–2 months industry-specific policies, tariffs, subsidies, antitrust actions, or geopolitical events affecting the sector
 - **Earnings calendar**: upcoming earnings date (if any)
 - **Key financials**: revenue growth, PE, gross margin (for peer comparison, max 3 items)
@@ -212,6 +222,23 @@ Each prediction must include:
 - **Key catalyst**: specific event + timing
 - **Counter-argument**: at least 1 item
 - **Required peer fields**: ticker + market (A-share/HK/US) + earnings date
+
+### 2.5 近期催化剂评价（非财报期核心依据）
+
+在非财报密集期，近期催化剂应取代财报传导成为预测的核心依据。按以下维度评估每项催化剂：
+
+| 维度 | 说明 |
+|------|------|
+| **事件类型** | 行业大会/产品发布/政策法规/重大订单/管理层变动/诉讼/监管行动/外部冲击等 |
+| **日期** | 精确日期，距离当前 < 2 周 |
+| **影响方向** | 利多 / 利空 / 中性待定 |
+| **影响强度** | 强（预期 > ±3% 波动）/ 中（±1%~3%）/ 弱（< ±1%） |
+| **可验证性** | 是否有具体数字/里程碑可追踪（如：订单金额、MAU 数据、量产时间表等） |
+
+**判定规则**：
+- 如果有 **2 项或以上强利多催化剂** + 整体技术面未转空 → 方向可上调至 Bullish
+- 如果有 **1 项强利空催化剂**（如出口限制、反垄断调查、业绩预警）→ 即使其他因素稳健，也需标记为 Neutral 或降低信心至 Low
+- 如果无明显近期催化剂 → 标注"近期无明显催化剂"，按基本面和技术面中性判断
 
 ---
 
