@@ -30,15 +30,15 @@ Deliver a 1–2 week directional outlook. No third-party API, no paid data sourc
   1. **确定语言**：综合判断用户输入的语言 + 之前对话上下文的语言，确定最终输出语言
   2. **严格对齐**：语言一旦确定，整份报告必须严格使用同一种语言输出（仅允许保留英文专有名词如 ticker、Bullish/Bearish/Neutral、技术术语等）
   3. **禁止混用**：不得在同一报告内混用中英文（例如：英文报告中出现「财报传导」、中文报告中出现 "Executive Summary"）。与语言不匹配的章节标题、标注文字、表格描述都必须替换为对应语言
-  4. **例外**：英文 ticker 代码（如 AAPL）、市场标注（A-share/HK/US）以及定向术语（Bullish/Bearish/Neutral）可保留原语言不变
+  4. **例外**：英文 ticker 代码（如 AAPL）、市场标注（A-share/HK/US）可保留原语言不变。定向术语在中文报告中须使用 **中文+英文双语格式**（如「看涨 (Bullish)」「看跌 (Bearish)」「中性 (Neutral)」）
 - Language lock rule:
   1. **Determine language**: evaluate both the user's input language and the prior conversation language to lock the output language
-  2. **Strict alignment**: once locked, the entire report must use that language consistently (only exceptions are English proper nouns like tickers, Bullish/Bearish/Neutral, technical terms)
+  2. **Strict alignment**: once locked, the entire report must use that language consistently (only exceptions are English proper nouns like tickers, technical terms)
   3. **No mixing**: do NOT mix languages within a single report (e.g., Chinese terms like "财报传导" in an English report, or "Executive Summary" in a Chinese report). Section headers, annotations, and table descriptions must all match the chosen language
-  4. **Exceptions**: stock tickers (e.g. AAPL), market labels (A-share/HK/US), and directional terms (Bullish/Bearish/Neutral) may stay in their original form
+  4. **Exceptions**: stock tickers (e.g. AAPL) and market labels (A-share/HK/US) may stay in their original form. In Chinese reports, directional terms must use **Chinese + English bilingual format** (e.g. 「看涨 (Bullish)」「看跌 (Bearish)」「中性 (Neutral)」)
 - Data gaps: mark as "Not available" / 「未获取到」, never fabricate
 - At most 3 key financial figures per company
-- Forbidden: specific buy/sell price levels. Use **Bullish / Bearish / Neutral** instead of Buy / Sell
+- Forbidden: specific buy/sell price levels. Use **Bullish / Bearish / Neutral** (in Chinese reports: **看涨 (Bullish) / 看跌 (Bearish) / 中性 (Neutral)**) instead of Buy / Sell
 - **Required peer fields**: every peer stock must include ticker, market (A-share / HK / US), and earnings status (already reported / upcoming + date)
 - **Earnings date must be precise**: label with exact date when found (e.g., "Jun 3, 2026"). If exact date not available via public search, mark as "未获取到具体日期" / "Exact date not found". Never fabricate or guess.
 - **近期催化剂必须纳入预测**：预测必须搜索并列出最近 1-2 周与该股**强相关**的事件、政策、公告、行业大会、产品发布等，并列明每个事件的具体日期、内容概要及预期影响方向。示例："ASUS GTC Taipei 大会（6/1）发布 RTX Spark PC 芯片——扩展 PC 新市场，利好" / "美国商务部 5/28 对华 AI 芯片新出口限制——限制 Blackwell 销往中国实体，利空"

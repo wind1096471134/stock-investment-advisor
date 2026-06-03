@@ -9,6 +9,9 @@ Thumbs.db
 .agents/
 skills-lock.json
 
+# Generated analysis reports (output artifacts, not part of the skill)
+report.md
+
 # OS files
 .vscode/
 .idea/

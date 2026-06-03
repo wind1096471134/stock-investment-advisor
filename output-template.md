@@ -2,6 +2,8 @@
 
 After analysis, output strictly following the structure below. Keep concise — avoid repetition.
 
+> **Note**: In Chinese-language reports, all directional terms (Bullish/Bearish/Neutral) must use **Chinese + English bilingual format**: 「看涨 (Bullish)」「看跌 (Bearish)」「中性 (Neutral)」. The template below shows English placeholders for brevity; adapt per the language lock rules in SKILL.md.
+
 ---
 
 ## Template
@@ -164,18 +166,18 @@ This report is compiled from publicly available information for research referen
 ```markdown
 ## 📊 Executive Summary
 
-### Recommendation: ⭐⭐⭐ Bullish
+### Recommendation: ⭐⭐⭐ 看涨 (Bullish)
 
 > **CATL (300750)** benefits from strong downstream demand (BYD Q1 revenue +30%) and improving upstream costs (lithium prices stabilizing). Valuation is at industry median with earnings support.
 
 | Dimension | Judgment | Rationale |
 |-----------|----------|-----------|
-| **Direction** | Bullish | Revenue growth +18% vs industry avg +12%; PE 22x vs industry 25x, reasonable |
+| **Direction** | 看涨 (Bullish) | Revenue growth +18% vs industry avg +12%; PE 22x vs industry 25x, reasonable |
 | **Confidence** | Medium | Auto sector competition intensifying; further gross margin decline could pressure valuation |
 | **Key Catalyst** | Energy storage orders + lithium price stabilization | Q2 policy tailwinds for storage; lithium price expected to rebound further in June |
-| **Technical** | Neutral | Stock below 20-day MA (188) but holding above 50-day (178); RSI 45, not oversold |
-| **Capital Flow** | Neutral | North-bound net outflow ~¥1.2B this week; institutional active but mixed |
-| **Policy** | Bullish | China's Q2 2026 energy storage subsidy policy + battery recycling mandates favor tier-1 battery makers; NEV purchase tax exemption extended through 2027 |
+| **Technical** | 中性 (Neutral) | Stock below 20-day MA (188) but holding above 50-day (178); RSI 45, not oversold |
+| **Capital Flow** | 中性 (Neutral) | North-bound net outflow ~¥1.2B this week; institutional active but mixed |
+| **Policy** | 看涨 (Bullish) | China's Q2 2026 energy storage subsidy policy + battery recycling mandates favor tier-1 battery makers; NEV purchase tax exemption extended through 2027 |
 | **Primary Risk** | EV battery peers' gross margin decline reflects intensifying competition | If BYD June sales miss, may drag the sector |
 
 ### Rationale
@@ -194,11 +196,11 @@ This report is compiled from publicly available information for research referen
 
 | Scenario | Probability | Expected Range | Trigger | Rationale |
 |----------|-------------|---------------|---------|-----------|
-| **Bullish** | ~30% | +5% to +12% | Q2 storage orders beat; BYD June sales strong; lithium further rallies | Strong macro support + policy tailwinds |
+| **看涨 (Bullish)** | ~30% | +5% to +12% | Q2 storage orders beat; BYD June sales strong; lithium further rallies | Strong macro support + policy tailwinds |
 | **Base** | ~50% | -3% to +3% | Gradual storage order conversion; stable lithium; moderate auto sales | Most balanced path, current valuation fair |
-| **Bearish** | ~20% | -5% to -15% | Auto sales miss; storage order delays; competition margin squeeze | Risk factors already flagged in peers |
+| **看跌 (Bearish)** | ~20% | -5% to -15% | Auto sales miss; storage order delays; competition margin squeeze | Risk factors already flagged in peers |
 
-> **Expected value**: Base → Neutral with mild upside bias
+> **Expected value**: Base → 中性 (Neutral) with mild upside bias
 
 ### Associated Stock Predictions
 
@@ -208,14 +210,14 @@ This report is compiled from publicly available information for research referen
 
 | Stock | Market | Relationship | Direction | Catalyst | Earnings | 财报传导 | Confidence |
 |-------|--------|-------------|-----------|----------|----------|---------|------------|
-| 002594 BYD | A-share (SZ) | Competitor | Bullish | NEV sales momentum + Q1 beat | Apr 24, 2026 | ✅ BYD先发→CATL后发参考 | Medium |
-| 300014 Yiwei Lithium | A-share (SZ) | Competitor | Bearish | Margin pressure continues | Apr 22, 2026 | ✅ 先发→CATL后发验证竞争加剧 | Medium |
+| 002594 BYD | A-share (SZ) | Competitor | 看涨 (Bullish) | NEV sales momentum + Q1 beat | Apr 24, 2026 | ✅ BYD先发→CATL后发参考 | Medium |
+| 300014 Yiwei Lithium | A-share (SZ) | Competitor | 看跌 (Bearish) | Margin pressure continues | Apr 22, 2026 | ✅ 先发→CATL后发验证竞争加剧 | Medium |
 
 **Tier 2 (Supplementary)** — Upstream / Investor *(only if strongly correlated)*
 
 | Stock | Market | Relationship | Direction | Catalyst | Earnings | 财报传导 | Confidence |
 |-------|--------|-------------|-----------|----------|----------|---------|------------|
-| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | Bullish | Lithium price rebound | Jun 5, 2026 | ❌ 财报日期在CATL之后，无传导 | Medium |
+| 002460 Ganfeng Lithium | A-share (SZ) | Upstream | 看涨 (Bullish) | Lithium price rebound | Jun 5, 2026 | ❌ 财报日期在CATL之后，无传导 | Medium |
 
 ---
 
@@ -225,21 +227,21 @@ This report is compiled from publicly available information for research referen
 
 | Stock | Market | Direction | Confidence | Key Catalyst | Earnings Date |
 |-------|--------|-----------|------------|--------------|---------------|
-| 300750 CATL | A-share | Bullish | Medium | Storage policy + lithium stabilization | Already out (Q1) |
+| 300750 CATL | A-share | 看涨 (Bullish) | Medium | Storage policy + lithium stabilization | Already out (Q1) |
 
 ### Peer Ripple Prediction
 
 **Tier 1 (Primary)** — Direct competitors / same-sector leaders
 | Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
 |-------|--------|-------------|-----------|----------|---------------|------------|
-| 002594 BYD | A-share | Competitor | Bullish | NEV sales continuing to beat | Already out (Q1 beat) | Medium |
-| 300014 Yiwei Lithium | A-share | Competitor | Bearish | Gross margin pressure continues | Already out (Q1 miss) | Medium |
+| 002594 BYD | A-share | Competitor | 看涨 (Bullish) | NEV sales continuing to beat | Already out (Q1 beat) | Medium |
+| 300014 Yiwei Lithium | A-share | Competitor | 看跌 (Bearish) | Gross margin pressure continues | Already out (Q1 miss) | Medium |
 
 **Tier 2 (Supplementary)** — Upstream / Downstream / Investor *(only if strongly correlated)*
 | Stock | Market | Relationship | Direction | Catalyst | Earnings Date | Confidence |
 |-------|--------|-------------|-----------|----------|---------------|------------|
-| 002460 Ganfeng Lithium | A-share | Upstream | Bullish | Lithium price rebound | Upcoming (Jun 5) | Medium |
-| GOOGL Alphabet | US (NASDAQ) | Investor | Bullish | Investee's cloud momentum signals AI infra tailwinds | Already out (Q1 beat) | Low |
+| 002460 Ganfeng Lithium | A-share | Upstream | 看涨 (Bullish) | Lithium price rebound | Upcoming (Jun 5) | Medium |
+| GOOGL Alphabet | US (NASDAQ) | Investor | 看涨 (Bullish) | Investee's cloud momentum signals AI infra tailwinds | Already out (Q1 beat) | Low |
 
 ---
 
@@ -286,17 +288,17 @@ This report is compiled from publicly available information for research referen
 
 | Source | Signal | Impact | Logic |
 |--------|--------|--------|-------|
-| BYD | Q1 revenue +30%, sales beat | Bullish | Strong downstream demand directly benefits CATL as primary supplier |
-| Ganfeng | Lithium price stabilizing + ~5% rebound | Bullish | Cost pressure easing, gross margin improvement expected |
-| Yiwei | Gross margin -2.1pp | CATL-Bullish | Tier-2 players struggling, concentration shifting to leader |
-| **Alphabet (GOOGL)** | **SpaceX early investor; Google Cloud +63%** | **Bullish** | **Investee's IPO validates AI infra spend thesis — positive signal for parent's investment portfolio** |
+| BYD | Q1 revenue +30%, sales beat | 看涨 (Bullish) | Strong downstream demand directly benefits CATL as primary supplier |
+| Ganfeng | Lithium price stabilizing + ~5% rebound | 看涨 (Bullish) | Cost pressure easing, gross margin improvement expected |
+| Yiwei | Gross margin -2.1pp | CATL-看涨 (Bullish) | Tier-2 players struggling, concentration shifting to leader |
+| **Alphabet (GOOGL)** | **SpaceX early investor; Google Cloud +63%** | **看涨 (Bullish)** | **Investee's IPO validates AI infra spend thesis — positive signal for parent's investment portfolio** |
 
 ### Target → Peer
 
 | Peer | Market | Earnings Date | Direction | Logic |
 |------|--------|--------------|-----------|-------|
-| 002460 Ganfeng Lithium | A-share (SZ) | Upcoming (Jun 5) | Bullish | CATL's battery shipment growth drives lithium demand, Ganfeng Q2 may see marginal improvement |
-| 002594 BYD | A-share (SZ) | Already out (Q1) | Neutral | No near-term catalyst from CATL directionally affecting BYD |
+| 002460 Ganfeng Lithium | A-share (SZ) | Upcoming (Jun 5) | 看涨 (Bullish) | CATL's battery shipment growth drives lithium demand, Ganfeng Q2 may see marginal improvement |
+| 002594 BYD | A-share (SZ) | Already out (Q1) | 中性 (Neutral) | No near-term catalyst from CATL directionally affecting BYD |
 
 ---
 
